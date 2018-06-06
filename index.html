@@ -11,49 +11,48 @@
     <meta name="mobile-web-app-capable" content="yes">
     <base target="_blank">
     <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+  <link rel="stylesheet" href="css/styles1000.css">
+  <link rel="stylesheet" href="css/styles750.css">
+  <link rel="stylesheet" href="css/styles500.css">
 
 </head>
 
 <body>
     <header>
         <nav>
-            <h1><a href="/">Restaurant Reviews</a></h1>
+            <h1><a aria-label="click to get to home page" href="/">Restaurants Reviews</a></h1>
         </nav>
-
         <section id = "breadcrumb-container">
-    <ul id="breadcrumb" >
-      <li><a href="/">Home</a></li>
-    </ul>
-    <!-- End breadcrumb -->
-        </section>
-    
+            <ul id="breadcrumb" >
+              <li><a href="/">Home</a></li>
+            </ul>
+        </section><!-- End breadcrumb-container -->
     </header>
-
-    
     <main id="maincontent">
         <section id="map-container">
-            <div id="map"></div>
-        </section>
-
-        <section>
-            <div class="filter-options">
-                <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
-                    <option value="all">Filter Neighborhoods</option>
-                </select>
-                <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
-                    <option value="all">Filter Cuisines</option>
-                </select>
-            </div>
+            <div tabindex="-1" id="map"></div>
+        </section><!-- End map-container -->
+        <section class="filter-options">
+            <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
+                <option aria-label="down arrow to select neighborhood" tabindex="10" value="all">Filter Neighborhoods</option>
+            </select>
+            <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
+                <option aria-label="down arrow to select neighborhood" tabindex="10" value="all">Filter Cuisines</option>
+            </select>
+        </section><!--end filter-options-->
+        <section id = "restaurants-list-container">
             <ul id="restaurants-list"></ul>
         </section>
     </main>
-    <script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
-    <script type="application/javascript" charset="utf-8" src="js/main.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeWs8ZbYE3RkuQMbNqc-_wPNth01TMFFs&libraries=places&callback=initMap"></script>
     <footer id="footer">
         Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
     </footer>
+    <!--scripts-->
+    <script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
+    <script type="application/javascript" charset="utf-8" src="js/main.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeWs8ZbYE3RkuQMbNqc-_wPNth01TMFFs&libraries=places&callback=initMap"></script>
+    
 </body>
 
 </html>

@@ -1,0 +1,82 @@
+@charset "utf-8";
+
+@media screen and (max-width: 500px) {
+
+    /* NAVIGATION */
+
+    nav {
+        height: 5em;
+        padding-top: 1.5em;
+        background-color: red;
+    }
+
+    nav h1 a {
+        font-size: 0.85em;
+        font-weight: 150;
+        letter-spacing: 0.25em;
+    }
+/*  Restaurant Filter */
+    .filter-options {
+    font-size: .75em;
+    }
+
+    .filter-options select {
+        width: 100%;
+    max-width: 200px;
+    }
+
+/*  Restaurant Listing  */
+
+#restaurants-list li {
+   position: static;
+   width: 100%;
+   float: none;
+}
+
+/*  Restaurant Details  */
+#restaurant-name {
+    font-size: 1.5em;
+    font-weight: 100;
+    letter-spacing: 0;
+    margin: 5px 0 10px;
+}
+
+#restaurant-address {
+    font-size: 0.9em;
+    margin: 10px 0px;
+}
+
+#restaurant-cuisine {
+    font-size: 0.9em;
+    padding: 10px 30px 10px;
+}
+
+#restaurant-hours td {
+    font-size: .75em;
+    text-align: left;
+}
+
+/*  Reviews specifically  */
+
+#reviews-container h2 {
+    font-size: 1.25em;
+}
+
+#reviews-list li {
+    margin: 0 0 30px;
+    position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

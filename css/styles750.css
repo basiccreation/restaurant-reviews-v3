@@ -1,0 +1,66 @@
+@charset "utf-8";
+
+@media screen and (max-width:750px) {
+
+        /* NAVIGATION */
+
+    nav {
+        background-color: purple;
+    }
+
+/*  Restaurant Filter */
+   .filter-options {
+        text-align: center;
+    }
+
+    .filter-options {
+    font-size: .85em;
+    }
+
+/*  Restaurant Listing  */
+
+#restaurants-list li {
+position: relative;
+   width: calc((100% - 40px)/2);float: left;
+}
+
+/*  Restaurant Details  */
+
+#restaurant-name {
+    font-size: 1.75em;
+    font-weight: 150;
+    margin: 10px 0 20px;
+}
+
+#restaurant-hours td {
+    font-size: .95em;
+    text-align: left;
+}
+
+/*  Reviews specifically  */
+
+#reviews-container h2 {
+    font-size: 1.5em;
+}
+
+#reviews-list {
+    width: 100%;
+}
+
+#reviews-list li {
+position: relative;
+width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+ 
+
+}
