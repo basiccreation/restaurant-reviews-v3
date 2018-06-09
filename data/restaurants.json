@@ -84,6 +84,7 @@
     "name": "Kang Ho Dong Baekjeong",
     "neighborhood": "Manhattan",
     "photograph": "Kang_Ho_Dong_Baekjeong.jpg",
+    "photograph400": "Kang_Ho_Dong_Baekjeong_sm.jpg",
     "address": "1 E 32nd St, New York, NY 10016",
     "latlng": {
       "lat": 40.747143,
@@ -363,6 +364,7 @@
     "name": "Casa Enrique",
     "neighborhood": "Queens",
     "photograph": "Casa_Enrique.jpg",
+    "photograph400": "Casa_Enrique_sm.jpg",
     "address": "5-48 49th Ave, Queens, NY 11101",
     "latlng": {
       "lat": 40.743394,
