@@ -74,8 +74,7 @@ nav h1 a {
 /* ====================== Map ====================== */
 
 #map {
-    height: 10px;
-    /* change height back to 400 */
+    height: 400px;
     width: 100%;
     background-color: #ccc;
 }
