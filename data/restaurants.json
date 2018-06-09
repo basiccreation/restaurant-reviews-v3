@@ -4,6 +4,7 @@
     "name": "Mission Chinese Food",
     "neighborhood": "Manhattan",
     "photograph": "Mission_Chinese_Food.jpg",
+    "photograph400": "Mission_Chinese_Food_sm.jpg",
     "address": "171 E Broadway, New York, NY 10002",
     "latlng": {
       "lat": 40.713829,
@@ -43,6 +44,7 @@
     "name": "Emily",
     "neighborhood": "Brooklyn",
     "photograph": "Emily.jpg",
+    "photograph400": "Emily_sm.jpg",
     "address": "919 Fulton St, Brooklyn, NY 11238",
     "latlng": {
       "lat": 40.683555,
@@ -121,6 +123,7 @@
     "name": "Katz's Delicatessen",
     "neighborhood": "Manhattan",
     "photograph": "Katzs_Delicatessen.jpg",
+    "photograph400": "Katzs_Delicatessen_sm.jpg",
     "address": "205 E Houston St, New York, NY 10002",
     "latlng": {
       "lat": 40.722216,
@@ -160,6 +163,7 @@
     "name": "Roberta's Pizza",
     "neighborhood": "Brooklyn",
     "photograph": "Robertas_Pizza.jpg",
+    "photograph400": "Robertas_Pizza_sm.jpg",
     "address": "261 Moore St, Brooklyn, NY 11206",
     "latlng": {
       "lat": 40.705089,
@@ -199,6 +203,7 @@
     "name": "Hometown BBQ",
     "neighborhood": "Brooklyn",
     "photograph": "Hometown_BBQ.jpg",
+    "photograph400": "Hometown_BBQ_sm.jpg",
     "address": "454 Van Brunt St, Brooklyn, NY 11231",
     "latlng": {
       "lat": 40.674925,
@@ -238,6 +243,7 @@
     "name": "Superiority Burger",
     "neighborhood": "Manhattan",
     "photograph": "Superiority_Burger.jpg",
+    "photograph400": "Superiority_Burger_sm.jpg",
     "address": "430 E 9th St, New York, NY 10009",
     "latlng": {
       "lat": 40.727397,
@@ -277,6 +283,7 @@
     "name": "The Dutch",
     "neighborhood": "Manhattan",
     "photograph": "The_Dutch.jpg",
+    "photograph400": "The_Dutch_sm.jpg",
     "address": "131 Sullivan St, New York, NY 10012",
     "latlng": {
       "lat": 40.726584,
@@ -316,6 +323,7 @@
     "name": "Mu Ramen",
     "neighborhood": "Queens",
     "photograph": "Mu_Ramen.jpg",
+    "photograph400": "Mu_Ramen_sm.jpg",
     "address": "1209 Jackson Ave, Queens, NY 11101",
     "latlng": {
       "lat": 40.743797,
