@@ -253,13 +253,13 @@ float: left;
     list-style-type: none;
     overflow: hidden;
     padding: 0 20px 20px;
-min-width: 300px;
+    min-width: 300px;
     max-width: 750px;
       width: calc((100% - 40px)/2);
     border-radius: 25px 0px 25px 0px;
     margin: 0px 10px 25px;
     position: relative;
-float: left;
+    float: left;
 }
 
 #reviews-list li:before{
