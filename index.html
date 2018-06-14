@@ -16,15 +16,25 @@
   <link rel="stylesheet" href="css/styles750.css">
   <link rel="stylesheet" href="css/styles500.css">
 
+    <script>
+      // Service workers require HTTPS (http://goo.gl/lq4gCo). If we're running on a real web server
+      // (as opposed to localhost on a custom port, which is whitelisted), then change the protocol to HTTPS.
+      if ((!location.port || location.port == "80") && location.protocol != 'https:') {
+        location.protocol = 'https:';
+      }
+    </script>
+
+
+
 </head>
 
 <body>
     <header>
         <nav>
-            <h1><a aria-label="click to get to home page" href="/">Restaurants Reviews</a></h1>
+            <h1 aria-label="List of restaurants in the nearby neighborhood" tabindex = "1" aria-label="Click to get to home page" ><a href="/">Restaurants Reviews</a></h1>
         </nav>
 
-        <section id = "breadcrumb-container">
+        <section tabindex = "1" aria-label="breadcrumb trail for the page you are on" id = "breadcrumb-container">
             <ul id="breadcrumb" >
               <li><a href="/">Home</a></li>
             </ul>
@@ -32,16 +42,18 @@
     </header>
 
     <main id="maincontent">
-        <section id="map-container">
+        <section tabindex="-1" id="map-container">
             <div tabindex="-1" id="map"></div>
         </section><!-- End map-container -->
      
-        <section class="filter-options">
-            <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
-                <option aria-label="down arrow to select neighborhood" tabindex="10" value="all">Filter Neighborhoods</option>
+        <section tabindex = "1" aria-label="Filters to narrow down restaurants" class="filter-options">
+            <select tabindex = "1" id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
+              <label for "neighborhoods-select">Select Neighborhood</label>
+                <option aria-label="down arrow to select a neighborhood. Tab if you want all" tabindex="1" value="all">Filter Neighborhoods</option>
             </select>
-            <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
-                <option aria-label="down arrow to select neighborhood" tabindex="10" value="all">Filter Cuisines</option>
+            <select tabindex = "1" id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
+                 <label for "cuisines-select">Select Cuisine</label>
+                <option aria-label="down arrow to select a cuisine. Tab if you want all" tabindex="10" value="all">Filter Cuisines</option>
             </select>
         </section><!--end filter-options-->
         <section id = "restaurants-list-container">
@@ -52,10 +64,70 @@
     <footer id="footer">
         Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
     </footer>
+
+<script>
+      function showFilesList() {
+        document.querySelector('#files').style.display = 'block';
+      }
+      // Helper function which returns a promise which resolves once the service worker registration
+      // is past the "installing" state.
+      function waitUntilInstalled(registration) {
+        return new Promise(function(resolve, reject) {
+          if (registration.installing) {
+            // If the current registration represents the "installing" service worker, then wait
+            // until the installation step (during which the resources are pre-fetched) completes
+            // to display the file list.
+            registration.installing.addEventListener('statechange', function(e) {
+              if (e.target.state == 'installed') {
+                resolve();
+              } else if(e.target.state == 'redundant') {
+                reject();
+              }
+            });
+          } else {
+            // Otherwise, if this isn't the "installing" service worker, then installation must have been
+            // completed during a previous visit to this page, and the resources are already pre-fetched.
+            // So we can show the list of files right away.
+            resolve();
+          }
+        });
+      }
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./service-worker.js', {scope: './'})
+          .then(waitUntilInstalled)
+          .then(showFilesList)
+          .catch(function(error) {
+            // Something went wrong during registration. The service-worker.js file
+            // might be unavailable or contain a syntax error.
+            // document.querySelector('#status').textContent = error;
+          });
+      } else {
+        // The current browser doesn't support service workers.
+        var aElement = document.createElement('a');
+        aElement.href = 'http://www.chromium.org/blink/serviceworker/service-worker-faq';
+        aElement.textContent = 'Service workers are not supported in the current browser.';
+        document.querySelector('#status').appendChild(aElement);
+      }
+    </script>
+
+
+
+
+
+
     <!--Scripts-->
-    <script type="application/javascript" charset="utf-8" src="js/sw.js"></script>
+
+
+
+
+
+
+
+
+    <!-- <script -->
     <script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
     <script type="application/javascript" charset="utf-8" src="js/main.js"></script>
+    <script type="application/javascript" charset="utf-8" src="js/sw.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeWs8ZbYE3RkuQMbNqc-_wPNth01TMFFs&libraries=places&callback=initMap"></script>
     
 </body>
