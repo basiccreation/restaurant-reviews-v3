@@ -2,74 +2,72 @@
 <html>
 
 <head>
-  <!-- Normalize.css for better cross-browser consistency -->
-  <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
-  <!-- Main CSS file -->
-  <link rel="stylesheet" href="css/styles.css" type="text/css">
-  <link rel="stylesheet" href="css/styles1000.css">
-  <link rel="stylesheet" href="css/styles750.css">
-  <link rel="stylesheet" href="css/styles500.css">
-  <title>Restaurant Info</title>
-  <meta charset="utf-8">
-  <meta name="description" content="Local restaurant Reviews">
-  <meta name="author" content="piasmith.com">
-  <meta name="viewport" content="width=device-width, minimum-scale=1.0,  initial-scale=1.0, user-scalable=yes">
-  <meta name="mobile-web-app-capable" content="yes">
-  <base target="_blank">
+    <!-- Normalize.css for better cross-browser consistency -->
+    <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
+    <!-- Main CSS file -->
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link rel="stylesheet" href="css/styles1000.css">
+    <link rel="stylesheet" href="css/styles750.css">
+    <link rel="stylesheet" href="css/styles500.css">
+    <link rel="stylesheet" href="css/styles375.css">
+    <title>Restaurant Info</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Local restaurant Reviews">
+    <meta name="author" content="piasmith.com">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0,  initial-scale=1.0, user-scalable=yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <base target="_blank">
 </head>
 
-<body >
-  <header>
-    <nav>
-      <h1 tabindex = "1"><a aria-label="Click to get to home page" href="/">Restaurants Reviews</a></h1>
-    </nav>
-
-    <section tabindex = "1" id = "breadcrumb-container"> 
-      <ul id="breadcrumb" >
-        <li><a href="/">Home</a></li>
-      </ul>
-    </section><!-- End breadcrumb-container -->
-  </header>
-
-  <main id="maincontent">
-    <!-- Beginning map -->
-    <section id="map-container">
-      <div tabindex = "-1" id="map"></div>
-    </section><!-- End map-container -->
-
-    <section id="restaurant-container">
-      <h1 tabindex = "1" id="restaurant-name"></h1>
-      <picture>
-
-      <source id = "viewport500" media="(max-width: 500px)" >
-      <source id = "viewport750" media="(max-width: 750px)" >
-      
-      <img tabindex = "-1" id="restaurant-img">
-    </picture>
-      <p tabindex = "1" id="restaurant-cuisine"></p>
-      <p  tabindex = "1"id="restaurant-address"></p>
-      <table tabindex = "1" id="restaurant-hours"></table>
-    </section><!-- End restaurant-container -->
-
-    <section id="reviews-container">
-      <ul  id="reviews-list"></ul>
-    </section><!-- End reviews-container -->
-  </main>
-
-  <footer id="footer">
-    Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
-  </footer>
-
-  <!-- Scripts -->
-  <!-- Database helpers -->
-  <script type="application/javascript" charset="utf-8" src="js/sw.js"></script>
-  <script type="text/javascript" src="js/dbhelper.js"></script>
-  <!-- Main javascript file -->
-  <script type="text/javascript" src="js/restaurant_info.js"></script>
-  <!-- Google Maps -->
+<body>
+    <header>
+        <nav>
+            <h1 tabindex="1"><a aria-label="Click to get to home page" href="/">Restaurants Reviews</a></h1>
+        </nav>
+        <section tabindex="1" id="breadcrumb-container">
+            <ul id="breadcrumb">
+                <li><a href="/">Home</a></li>
+            </ul>
+        </section>
+        <!-- End breadcrumb-container -->
+    </header>
+    <main id="maincontent">
+        <!-- Beginning map -->
+        <section id="map-container">
+            <div tabindex="-1" id="map"></div>
+        </section>
+        <!-- End map-container -->
+        <section id="restaurant-container">
+            <h1 tabindex="1" id="restaurant-name"></h1>
+            <picture>
+                <source id="viewport500" media="(max-width: 500px)">
+                <source id="viewport750" media="(max-width: 750px)">
+                <img tabindex="-1" id="restaurant-img">
+            </picture>
+            <p tabindex="1" id="restaurant-cuisine"></p>
+            <address tabindex="1" id="restaurant-address"></address>
+            <aside>
+                <table tabindex="1" id="restaurant-hours"></table>
+            </aside>
+        </section>
+        <!-- End restaurant-container -->
+        <section id="reviews-container">
+            <ul id="reviews-list"></ul>
+        </section>
+        <!-- End reviews-container -->
+    </main>
+    <footer id="footer">
+        Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
+    </footer>
+    <!-- Scripts -->
+    <!-- Database helpers -->
+    <script type="application/javascript" charset="utf-8" src="js/sw.js"></script>
+    <script type="text/javascript" src="js/dbhelper.js"></script>
+    <!-- Main javascript file -->
+    <script type="text/javascript" src="js/restaurant_info.js"></script>
+    <!-- Google Maps -->
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeWs8ZbYE3RkuQMbNqc-_wPNth01TMFFs&libraries=places&callback=initMap"></script>
-  <!-- End scripts -->
-
+    <!-- End scripts -->
 </body>
 
 </html>

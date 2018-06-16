@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+@media screen and (max-width: 375px) {
+
+    /* NAVIGATION */
+    nav h1 a {
+        font-size: 0.65em;
+    }
+/*  Restaurant Filter */
+    .filter-options {
+    font-size: .75em;
+    }
+
+    .filter-options select {
+   width: 45%;
+   min-width:100px;
+   padding: 0 5px;
+    }
+
+/*  Reviews specifically  */
+
+#reviews-container h2 {
+    font-size: 1.25em;
+}
+
+#reviews-list li {
+    margin: 0 0 30px;
+    position: relative;
+    font-size: .75em;
+    min-width:250px;
+}
+
+#reviews-list li p {
+    margin: 0 0 6px;
+    font-size: .85em;
+    text-align: left;
+}
+
+}
