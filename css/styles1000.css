@@ -1,4 +1,4 @@
-    @charset "utf-8";
+@charset "utf-8";
 
 @media screen and (max-width:2000px) {
 
@@ -24,11 +24,11 @@
         color: black;
     }
     /* BREADCRUMBS */
-    #breadcrumb-container {
+    .breadcrumb-container {
         width: 100%;
     }
 
-    #breadcrumb {
+    .breadcrumb {
         padding: 10px 40px 16px;
         list-style: none;
         background-color: #eee;
@@ -36,22 +36,22 @@
         margin: 0;
     }
     /* Display list items side by side */
-    #breadcrumb li {
+    .breadcrumb li {
         display: inline;
     }
     /* Add a slash symbol (/) before/behind each list item */
-    #breadcrumb li+li:before {
+    .breadcrumb li+li:before {
         padding: 8px;
         color: black;
         content: "/\00a0";
     }
     /* Add a color to all links inside the list */
-    #breadcrumb li a {
+    .breadcrumb li a {
         color: #0275d8;
         text-decoration: none;
     }
     /* Add a color on mouse-over */
-    #breadcrumb li a:hover {
+    .breadcrumb li a:hover {
         color: #01447e;
         text-decoration: underline;
     }

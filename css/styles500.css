@@ -24,13 +24,13 @@
         max-width: 200px;
     }
     /*  Restaurant Listing  */
-    #restaurants-list li {
+    .restaurants-list li {
         position: relative;
         width: 100%;
         float: none;
         min-height: 450px;
     }
-    
+
     /*  Restaurant Details  */
     #restaurant-name {
         font-size: 1.5em;
