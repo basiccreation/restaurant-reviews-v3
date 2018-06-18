@@ -157,9 +157,21 @@ createRestaurantHTML = (restaurant) => {
     name.innerHTML = restaurant.name;
     li.append(name);
 
+    /*cuisine only shows if selection is all*/
+    const selectedCuisine = document.getElementById("cuisines-select").selectedIndex;
+    if (selectedCuisine == 0) {
+    const cuisine = document.createElement("p");
+    cuisine.innerHTML = restaurant.cuisine_type;
+    li.append(cuisine);
+    }
+
+    /*neighboorhood only shows if selection is all*/
+  const selectedNeighborhood = document.getElementById("neighborhoods-select").selectedIndex;
+    if (selectedNeighborhood == 0) {
     const neighborhood = document.createElement("p");
     neighborhood.innerHTML = restaurant.neighborhood;
     li.append(neighborhood);
+    }
 
     const address = document.createElement("p");
     address.innerHTML = restaurant.address;
