@@ -9,7 +9,6 @@
     box-sizing: border-box;
 }
 
-
 .row {
     width: 100%;
     display: flex;
@@ -62,7 +61,6 @@
 .col-12 {
     width: 100%;
 }
-
 
 body,
 td,

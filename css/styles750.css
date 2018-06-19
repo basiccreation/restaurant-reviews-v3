@@ -6,12 +6,14 @@
         text-align: center;
         font-size: .85em;
     }
+
     /*  Restaurant Listing  */
     .restaurants-list li {
         position: relative;
         width: calc((100% - 40px)/2);
         float: left;
     }
+    
     /*  Restaurant Details  */
     #restaurant-name {
         font-size: 1.75em;

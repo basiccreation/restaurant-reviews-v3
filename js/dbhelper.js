@@ -176,7 +176,6 @@ class DBHelper {
         return (`./img/${restaurant.photograph750}`);
     }
 
-
     /**
      * Restaurant image alt.
      */
@@ -197,5 +196,4 @@ class DBHelper {
         });
         return marker;
     }
-
 }

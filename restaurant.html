@@ -25,7 +25,7 @@
             <h1 tabindex="1"><a aria-label="Click to get to home page" href="/">Restaurants Reviews</a></h1>
         </nav>
         <section tabindex="1" class="breadcrumb-container">
-            <ul class="breadcrumb">
+            <ul id="breadcrumb">
                 <li><a href="/">Home</a></li>
             </ul>
         </section>
@@ -61,7 +61,8 @@
     </footer>
     <!-- Scripts -->
     <!-- Database helpers -->
-    <script type="application/javascript" charset="utf-8" src="js/sw.js"></script>
+    <script type="application/javascript" src="sw/checkSW.js"></script>
+    <script type="application/javascript" src="sw/service-worker.js"></script>
     <script type="text/javascript" src="js/dbhelper.js"></script>
     <!-- Main javascript file -->
     <script type="text/javascript" src="js/restaurant_info.js"></script>

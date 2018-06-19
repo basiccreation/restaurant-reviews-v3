@@ -13,6 +13,7 @@
         font-weight: 150;
         letter-spacing: 0.25em;
     }
+
     /*  Restaurant Filter */
     .filter-options {
         font-size: .75em;
@@ -23,6 +24,7 @@
         min-width: 140px;
         max-width: 200px;
     }
+    
     /*  Restaurant Listing  */
     .restaurants-list li {
         position: relative;
