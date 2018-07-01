@@ -149,7 +149,7 @@ createRestaurantHTML = (restaurant) => {
     image.alt = DBHelper.imageAltForRestaurant(restaurant);
     picture.append(image);
 
-    const name = document.createElement("h1");
+    const name = document.createElement("h2");
     name.tabIndex = 1;
     name.title = restaurant.name + " is " +
         restaurant.cuisine_type + " type food in " +
