@@ -233,12 +233,12 @@
         padding: 30px 40px;
     }
 
-    #reviews-container h2:focus {
+    #reviews-container h3:focus {
         background-color: #333;
         color: #fff;
     }
 
-    #reviews-container h2 {
+    #reviews-container h3 {
         font-size: 1.75em;
         letter-spacing: -1px;
         padding-bottom: 1pt;
