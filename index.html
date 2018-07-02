@@ -9,26 +9,19 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0,  initial-scale=1.0, user-scalable=yes">
     <meta name="mobile-web-app-capable" content="yes">
     <base target="_blank">
-
-
-        <script>
-      // Service workers require HTTPS (http://goo.gl/lq4gCo). If we're running on a real web server
-      // (as opposed to localhost on a custom port, which is whitelisted), then change the protocol to HTTPS.
-      if ((!location.port || location.port == "80") && location.protocol != 'https:') {
+    <script>
+    // Service workers require HTTPS (http://goo.gl/lq4gCo). If we're running on a real web server
+    // (as opposed to localhost on a custom port, which is whitelisted), then change the protocol to HTTPS.
+    if ((!location.port || location.port == "80") && location.protocol != 'https:') {
         location.protocol = 'https:';
-      }
+    }
     </script>
-
     <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/styles1000.css">
     <link rel="stylesheet" href="css/styles750.css">
     <link rel="stylesheet" href="css/styles500.css">
     <link rel="stylesheet" href="css/styles375.css">
-
-
-
-
 </head>
 
 <body>
@@ -66,20 +59,14 @@
     <footer class="footer">
         Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
     </footer>
-   
     <!-- Scripts -->
-
     <!-- Service Worker -->
-    <script type="text/javascript" src="./sw/check-serviceworker.js"></script>
- 
-   <script type="text/javascript" src="./sw/serviceworker-cache-polyfill.js"></script>
-
+    <script type="text/javascript" src="./check-serviceworker.js"></script>
+    <script type="text/javascript" src="./serviceworker-cache-polyfill.js"></script>
     <!-- Database helper -->
     <script type="text/javascript" src="./js/dbhelper.js"></script>
-
     <!-- Main javascript file -->
     <script type="text/javascript" src="./js/main.js"></script>
-
     <!-- Google Maps -->
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeWs8ZbYE3RkuQMbNqc-_wPNth01TMFFs&libraries=places&callback=initMap"></script>
 </body>
