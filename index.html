@@ -10,12 +10,25 @@
     <meta name="mobile-web-app-capable" content="yes">
     <base target="_blank">
 
+
+        <script>
+      // Service workers require HTTPS (http://goo.gl/lq4gCo). If we're running on a real web server
+      // (as opposed to localhost on a custom port, which is whitelisted), then change the protocol to HTTPS.
+      if ((!location.port || location.port == "80") && location.protocol != 'https:') {
+        location.protocol = 'https:';
+      }
+    </script>
+
     <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/styles1000.css">
     <link rel="stylesheet" href="css/styles750.css">
     <link rel="stylesheet" href="css/styles500.css">
     <link rel="stylesheet" href="css/styles375.css">
+
+
+
+
 </head>
 
 <body>
@@ -57,9 +70,10 @@
     <!-- Scripts -->
 
     <!-- Service Worker -->
-   <!-- 
+    <script type="text/javascript" src="./sw/check-serviceworker.js"></script>
+ 
    <script type="text/javascript" src="./sw/serviceworker-cache-polyfill.js"></script>
--->
+
     <!-- Database helper -->
     <script type="text/javascript" src="./js/dbhelper.js"></script>
 
