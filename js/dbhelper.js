@@ -1,14 +1,7 @@
 /*jshint esversion: 6 */
-
-// IndexedDB Promised
-import idb from 'idb';
-await idb.open(…);
-
 /**
  * Common database helper functions.
  */
-
-
 class DBHelper {
 
     /**
