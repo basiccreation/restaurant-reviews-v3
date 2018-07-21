@@ -10,8 +10,8 @@ class DBHelper {
      */
     static get DATABASE_URL() {
         const port = 1337; // Change this to your server port
-        return `./data/restaurants.json`;
-       // return `http://localhost:${port}/data/restaurants.json`;
+        return `./data/restaurants.jso`;
+        //return `http://localhost:${port}/data/restaurants.json`;
     }
 
     /**
@@ -25,6 +25,68 @@ class DBHelper {
                 const json = JSON.parse(xhr.responseText);
                 const restaurants = json.restaurants;
                 callback(null, restaurants);
+            } else if  (xhr.status === 404) { //this if statement, I'm adding for the dbindexed 
+
+                let request = window.indexedDB.open("RestaurantDatabase", 1);
+                request.onsuccess = function(e) {
+                    db = e.target.result;
+
+                function getAllItems(callback) {
+
+                    var transaction = db.transaction("customers", "readwrite");
+                    var objstore = transaction.objectStore("customers");
+                    var items = [];
+
+                    transaction.oncomplete = function(evt) {  
+                            callback(items);
+                        };
+                     
+                        var cursorRequest = objstore.openCursor();
+                     
+                        cursorRequest.onerror = function(error) {
+                            console.log(error);
+                        };
+                     
+                        cursorRequest.onsuccess = function(evt) {                    
+                            var cursor = evt.target.result;
+                            if (cursor) {
+                                items.push(cursor.value);
+                                cursor.continue();
+                            }
+                        };
+                }
+
+                getAllItems(function (items) {
+                    //const json = JSON.parse(items);
+                    //const restaurants = json.restaurants;
+                    const restaurants = items;
+                    callback(null, restaurants);
+
+
+                    var len = items.length;
+                    for (var i = 0; i < len; i += 1) {
+                        console.log(items[i]);
+                    }
+                });
+
+
+
+
+                    // let q1 = objstore.get(2);
+
+
+                    // const json = JSON.parse(db);
+                    // const restaurants = json.restaurants;
+                    // callback(null, restaurants);
+
+
+
+                    // q1.onsuccess = function() {
+                    //     console.log(q1.result);
+                    // }
+
+                }; //end onsuccess
+
             } else { // Oops!. Got an error from server.
                 const error = (`Request failed. Returned status of ${xhr.status}`);
                 callback(error, null);
