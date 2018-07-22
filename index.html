@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta name="description" content="Local restaurant Reviews">
     <meta name="author" content="piasmith.com">
+    <meta name="theme-color" content="#fdfdfd"/>
     <meta name="viewport" content="width=device-width, minimum-scale=1.0,  initial-scale=1.0, user-scalable=yes">
     <meta name="mobile-web-app-capable" content="yes">
     <base target="_blank">
@@ -22,6 +23,8 @@
     <link rel="stylesheet" href="css/styles750.css">
     <link rel="stylesheet" href="css/styles500.css">
     <link rel="stylesheet" href="css/styles375.css">
+    <link rel="manifest" href="/manifest.webmanifest">
+
 </head>
 
 <body>
@@ -42,12 +45,10 @@
         </section>
         <!-- End map-container -->
         <section tabindex="1" aria-label="Filters to narrow down restaurants" class="filter-options">
-            <select tabindex="1" id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
-                <label for "neighborhoods-select">Select Neighborhood</label>
+            <select aria-label="Select Neighborhood" tabindex="1" id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
                 <option aria-label="down arrow to select a neighborhood. Tab if you want all" tabindex="1" value="all">Filter Neighborhoods</option>
             </select>
-            <select tabindex="1" id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
-                <label for "cuisines-select">Select Cuisine</label>
+            <select aria-label="Select Cuisine" tabindex="1" id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
                 <option aria-label="down arrow to select a cuisine. Tab if you want all" tabindex="10" value="all">Filter Cuisines</option>
             </select>
         </section>

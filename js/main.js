@@ -178,7 +178,7 @@ createRestaurantHTML = (restaurant) => {
     li.append(address);
 
     const more = document.createElement("a");
-    more.innerHTML = "Viiew Details";
+    more.innerHTML = "View Details";
   //  more.setAttribute = ('target', '_blank') = "_self";
     more.target = "_self"
     more.tabIndex = 1;

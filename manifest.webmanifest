@@ -1,0 +1,22 @@
+{
+  "name": "Restaurantreviewer",
+  "short_name": "Reviews",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fdfdfd",
+  "theme_color": "#fdfdfd",
+  "description": "A restaurant Reviews app for local restaurants.",
+  "icons": [{
+    "src": "img/icon512.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  },{
+    "src": "img/icon192.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  }],
+  "related_applications": [{
+    "platform": "play",
+    "url": "https://play.google.com/store/apps/details?id=cheeaun.restaurantreviewer"
+  }]
+}
