@@ -11,7 +11,7 @@ class DBHelper {
     static get DATABASE_URL() {
         const port = 1337; // Change this to your server port
         return `./data/restaurants.json`;
-       // return `http://localhost:${port}/data/restaurants.json`;
+        //return `http://localhost:${port}/data/restaurants.json`;
     }
 
     /**
@@ -25,46 +25,48 @@ class DBHelper {
                 const json = JSON.parse(xhr.responseText);
                 const restaurants = json.restaurants;
                 callback(null, restaurants);
-            } else if  (xhr.status === 404) { //got a 404, load json from IDB 
+            } 
+            // else if  (xhr.status === 404) { //got a 404, load json from IDB 
 
-                let request = window.indexedDB.open("RestaurantDatabase", 1);
-                request.onsuccess = function(e) {
-                    db = e.target.result;
+            //     let request = window.indexedDB.open("RestaurantDatabase", 1);
+            //     request.onsuccess = function(e) {
+            //         db = e.target.result;
 
-                function getAllItems(callback) {
+            //     function getAllItems(callback) {
 
-                    var transaction = db.transaction("customers", "readwrite");
-                    var objstore = transaction.objectStore("customers");
-                    var items = [];
+            //         var transaction = db.transaction("customers", "readwrite");
+            //         var objstore = transaction.objectStore("customers");
+            //         var items = [];
 
-                    transaction.oncomplete = function(evt) {  
-                            callback(items);
-                        };
+            //         transaction.oncomplete = function(evt) {  
+            //                 callback(items);
+            //             };
                      
-                        var cursorRequest = objstore.openCursor();
+            //             var cursorRequest = objstore.openCursor();
                      
-                        cursorRequest.onerror = function(error) {
-                            console.log(error);
-                        };
+            //             cursorRequest.onerror = function(error) {
+            //                 console.log(error);
+            //             };
                      
-                        cursorRequest.onsuccess = function(evt) {                    
-                            var cursor = evt.target.result;
-                            if (cursor) {
-                                items.push(cursor.value);
-                                cursor.continue();
-                            }
-                        };
-                }
+            //             cursorRequest.onsuccess = function(evt) {                    
+            //                 var cursor = evt.target.result;
+            //                 if (cursor) {
+            //                     items.push(cursor.value);
+            //                     cursor.continue();
+            //                 }
+            //             };
+            //     }
 
-                getAllItems(function (items) {
-                    const restaurants = items;
-                    callback(null, restaurants);
+            //     getAllItems(function (items) {
+            //         const restaurants = items;
+            //         callback(null, restaurants);
 
-                });
+            //     });
 
-                }; //end onsuccess
+            //     }; //end onsuccess
 
-            } else { // Oops!. Got an error from server.
+            // } 
+            else { // Oops!. Got an error from server.
                 const error = (`Request failed. Returned status of ${xhr.status}`);
                 callback(error, null);
             }

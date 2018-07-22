@@ -3,7 +3,7 @@
 //window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
 
 //Inspiration was taken from 
-//https://www.youtube.com/watch?v=3y_x3Nkc8Dw PothOnProgramming YouTube Video
+//https://www.youtube.com/watch?v=g4U5WRzHitM Getting Started with indexedDB by All things Javascript
 //https://stackoverflow.com/questions/12607251/how-do-i-store-json-objects-in-indexeddb
 //https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 //https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB
@@ -23,20 +23,24 @@ let request = window.indexedDB.open("RestaurantDatabase", 1);
 
 
 request.onerror = function(e) {
-    console.log("there was an error" + e.target.errorCode);
+    console.log("there was an error: " + e.target.errorCode);
 }; //end onerror
 
 
 request.onsuccess = function(e) {
     db = e.target.result;
+
 }; //end onsuccess
 
 //runs if there is a new version (or if original database was deleted)
 request.onupgradeneeded = function(e) {
+    
     //save the database interface
     var db = e.target.result;
+
     //create object store for this database
     var objectStore = db.createObjectStore("customers", { autoIncrement: true });
+        console.log("objectStore created");
 
     //create indexes to look up restaurants by
     objectStore.createIndex("name", "name", { unique: false });
@@ -45,7 +49,7 @@ request.onupgradeneeded = function(e) {
 
     objectStore.transaction.oncomplete = function(e) {
 
-        const JSONurl = "http://localhost:1337/restaurants";
+        const JSONurl = "http://localshost:1337/restaurants";
 
         fetch(JSONurl)
             .then(function(response) {
@@ -61,5 +65,6 @@ request.onupgradeneeded = function(e) {
             .catch(err => {
                 console.log("JSON err");
             }); // end fetch
-    }
-};
+    } // end oncomplete
+
+}; // end onupgradeneeded
