@@ -55,6 +55,8 @@ fetchCuisines = () => {
     });
 };
 
+
+
 /**
  * Set cuisines HTML.
  */
@@ -123,6 +125,9 @@ resetRestaurants = (restaurants) => {
     self.restaurants = restaurants;
 };
 
+
+
+
 /**
  * Create all restaurants HTML and add them to the webpage.
  */
@@ -137,15 +142,21 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
 /**
  * Create restaurant HTML.
  */
+
 createRestaurantHTML = (restaurant) => {
     const li = document.createElement("li");
+    li.className = "restaurant-li";
+
+
 
     const picture = document.createElement("picture");
     li.append(picture);
 
+
     const image = document.createElement("img");
-    image.className = "restaurant-img";
+    image.setAttribute("dataSrc", DBHelper.imageUrlForRestaurantList(restaurant));
     image.src = DBHelper.imageUrlForRestaurantList(restaurant);
+    image.className = "restaurant-img";
     image.alt = DBHelper.imageAltForRestaurant(restaurant);
     picture.append(image);
 
@@ -185,9 +196,11 @@ createRestaurantHTML = (restaurant) => {
 
     more.href = DBHelper.urlForRestaurant(restaurant);
     li.append(more);
-
+ 
     return li;
 };
+
+
 
 /**
  * Add markers for current restaurants to the map.

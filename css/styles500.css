@@ -1,10 +1,6 @@
 @charset "utf-8";
 
-@media screen and (max-width: 450px) {
-nav h1 a {
-    font-size: 0.75em;
-}
-}
+
 
 @media screen and (max-width: 500px) {
 
