@@ -1,3 +1,4 @@
+
 /*jshint esversion: 6 */
 /**
  * Common database helper functions.
@@ -8,11 +9,22 @@ class DBHelper {
      * Database URL.
      * Change this to restaurants.json file location on your server.
      */
+    // static get DATABASE_URL() {
+    //     const port = 1337; // Change this to your server port
+    //     //return `./data/restaurants.json`;
+    //     return `http://localhost:${port}/data/restaurants.json`;
+    // }
+
+   //  static get DATABASE_URL() {
+   //      const port = 8000 // Change this to your server port
+   //  return `http://localhost:${port}/data/restaurants.json`;
+   // }
+
     static get DATABASE_URL() {
-        const port = 1337; // Change this to your server port
-        return `./data/restaurants.json`;
-       // return `http://localhost:${port}/data/restaurants.json`;
-    }
+        const port = 1337 // Change this to your server port
+    return `http://localhost:${port}/data/restaurants.json`;
+   }
+
 
     /**
      * Fetch all restaurants.
@@ -191,28 +203,28 @@ class DBHelper {
      * Restaurant image URL.
      */
     static imageUrlForRestaurant(restaurant) {
-        return (`./img/${restaurant.photograph}`);
+        return (`./img/${restaurant.id}_sm.jpg`);
     }
 
     /**
      * Restaurant image URL for restaurants-list.
      */
     static imageUrlForRestaurantList(restaurant) {
-        return (`./img/${restaurant.photograph400}`);
+        return (`./img/${restaurant.id}_sm.jpg`);
     }
 
     /**
      * Restaurant image URL for restaurant viewport 500.
      */
     static imageUrlForRestaurant500(restaurant) {
-        return (`./img/${restaurant.photograph500}`);
+        return (`./img/${restaurant.id}_md.jpg`);
     }
 
     /**
      * Restaurant image URL for restaurant viewport 750.
      */
     static imageUrlForRestaurant750(restaurant) {
-        return (`./img/${restaurant.photograph750}`);
+        return (`./img/${restaurant.id}_sm.jpg`);
     }
 
     /**
