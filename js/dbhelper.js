@@ -22,7 +22,7 @@ class DBHelper {
 
     static get DATABASE_URL() {
         const port = 1337 // Change this to your server port
-    return `http://localhost:${port}/data/restaurants.json`;
+    return `http://localhost:${port}/restaurants`;
    }
 
 
@@ -35,7 +35,9 @@ class DBHelper {
         xhr.onload = () => {
             if (xhr.status === 200) { // Got a success response from server!
                 const json = JSON.parse(xhr.responseText);
-                const restaurants = json.restaurants;
+                const restaurants = json;
+                console.log(restaurants);
+
                 callback(null, restaurants);
             } else if  (xhr.status === 404) { //got a 404, load json from IDB 
 
@@ -91,10 +93,12 @@ class DBHelper {
         // fetch all restaurants with proper error handling.
         DBHelper.fetchRestaurants((error, restaurants) => {
             if (error) {
+                console.log("there's an error");
                 callback(error, null);
             } else {
                 const restaurant = restaurants.find(r => r.id == id);
                 if (restaurant) { // Got the restaurant
+                    console.log("found restaurant");
                     callback(null, restaurant);
                 } else { // Restaurant does not exist in the database
                     callback("Restaurant does not exist", null);

@@ -1,24 +1,23 @@
-// Get all of the images that are marked up to lazy load
-//const images = document.querySelectorAll('.restaurant-img');
+const images = Array.from(document.querySelectorAll('img'));
 
-const images = document.querySelectorAll('[data-src]');
-const config = {
-  rootMargin: '0px 0px 50px 0px',
-  threshold: 0
-};
-let loaded = 0;
+const preloadImage = (img) => {
+  const imageSrc = img.dataset.src;
+  img.setAttribute('src', imageSrc);
+}
 
-let observer = new IntersectionObserver(function (entries, self) {
+const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      console.log(`Image ${entry.target.src} is in the viewport!`);
+    if (entry.intersectionRatio > 0) {
+      observer.unobserve(entry.target);
       preloadImage(entry.target);
-      // Stop watching and load the image
-      self.unobserve(entry.target);
     }
-  });
-}, config);
-
-images.forEach(image => {
-  observer.observe(image);
+  })
+}, {
+  root: null,
+  rootMargin: '50px 0px',
+  threshold: 0.01
 });
+images.forEach(($img, index) => {
+  console.logt($img);
+  observer.observe($img);
+})
