@@ -1,23 +1,34 @@
-const images = Array.from(document.querySelectorAll('img'));
+//https://codepen.io/anon/pen/qyKJNO?editors=0010
 
-const preloadImage = (img) => {
-  const imageSrc = img.dataset.src;
-  img.setAttribute('src', imageSrc);
-}
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.intersectionRatio > 0) {
-      observer.unobserve(entry.target);
-      preloadImage(entry.target);
-    }
-  })
-}, {
-  root: null,
+const images = document.querySelectorAll('img[data-src]');
+const config = {
   rootMargin: '50px 0px',
   threshold: 0.01
-});
-images.forEach(($img, index) => {
-  console.logt($img);
-  observer.observe($img);
-})
+};
+
+let observer;
+
+if ('IntersectionObserver' in window) {
+  observer = new IntersectionObserver(onChange, config);
+  images.forEach(img => observer.observe(img));
+} else {
+  console.log('%cIntersection Observers not supported', 'color: red');
+  images.forEach(image => loadImage(image));
+}
+
+const loadImage = image => {
+  image.classList.add('fade-in');
+  image.src = image.dataset.src;
+}
+
+function onChange(changes, observer) {
+  changes.forEach(change => {
+    if (change.intersectionRatio > 0) {
+      // Stop watching and load the image
+      loadImage(change.target);
+      observer.unobserve(change.target);
+    }
+    
+  });
+}

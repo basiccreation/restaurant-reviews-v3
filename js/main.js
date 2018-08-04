@@ -133,10 +133,15 @@ resetRestaurants = (restaurants) => {
  */
 fillRestaurantsHTML = (restaurants = self.restaurants) => {
     const ul = document.getElementById("restaurants-list");
+
     restaurants.forEach(restaurant => {
+   
         ul.append(createRestaurantHTML(restaurant));
+           
     });
+
     addMarkersToMap();
+
 };
 
 /**
@@ -147,11 +152,22 @@ createRestaurantHTML = (restaurant) => {
     const li = document.createElement("li");
     li.className = "restaurant-li";
 
-
-
     const picture = document.createElement("picture");
     li.append(picture);
 
+    const imagep = document.createElement("source");
+    imagep.setAttribute("data-Src", DBHelper.webpImageUrlForRestaurantList(restaurant));
+    imagep.srcset = DBHelper.webpImageUrlForRestaurantList(restaurant);
+    imagep.className = "restaurant-img";
+    imagep.alt = DBHelper.imageAltForRestaurant(restaurant);
+    picture.append(imagep);    
+
+    const imagesource = document.createElement("source");
+    imagesource.setAttribute("data-Src", DBHelper.imageUrlForRestaurantList(restaurant));
+    imagesource.srcset = DBHelper.imageUrlForRestaurantList(restaurant);
+    imagesource.className = "restaurant-img";
+    imagesource.alt = DBHelper.imageAltForRestaurant(restaurant);
+    picture.append(imagesource);
 
     const image = document.createElement("img");
     image.setAttribute("data-Src", DBHelper.imageUrlForRestaurantList(restaurant));
@@ -212,6 +228,7 @@ addMarkersToMap = (restaurants = self.restaurants) => {
         google.maps.event.addListener(marker, "click", () => {
             window.location.href = marker.url;
         });
+        
         self.markers.push(marker);
     });
 };

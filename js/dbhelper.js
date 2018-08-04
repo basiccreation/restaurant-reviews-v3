@@ -36,7 +36,6 @@ class DBHelper {
             if (xhr.status === 200) { // Got a success response from server!
                 const json = JSON.parse(xhr.responseText);
                 const restaurants = json;
-                console.log(restaurants);
 
                 callback(null, restaurants);
             } else if  (xhr.status === 404) { //got a 404, load json from IDB 
@@ -207,7 +206,11 @@ class DBHelper {
      * Restaurant image URL.
      */
     static imageUrlForRestaurant(restaurant) {
-        return (`./img/${restaurant.id}_sm.jpg`);
+        return (`./img/${restaurant.id}_md.jpg`);
+    }
+
+    static webpImageUrlForRestaurant(restaurant) {
+        return (`./img/${restaurant.id}_md.webp`);
     }
 
     /**
@@ -217,6 +220,10 @@ class DBHelper {
         return (`./img/${restaurant.id}_sm.jpg`);
     }
 
+    static webpImageUrlForRestaurantList(restaurant) {
+        return (`./img/${restaurant.id}_sm.webp`);
+    }
+
     /**
      * Restaurant image URL for restaurant viewport 500.
      */
@@ -224,11 +231,19 @@ class DBHelper {
         return (`./img/${restaurant.id}_md.jpg`);
     }
 
+    static webpImageUrlForRestaurant500(restaurant) {
+        return (`./img/${restaurant.id}_md.webp`);
+    }
+
     /**
      * Restaurant image URL for restaurant viewport 750.
      */
     static imageUrlForRestaurant750(restaurant) {
-        return (`./img/${restaurant.id}_sm.jpg`);
+        return (`./img/${restaurant.id}_lg.jpg`);
+    }
+
+    static webImageUrlForRestaurant750(restaurant) {
+        return (`./img/${restaurant.id}_lg.webp`);
     }
 
     /**

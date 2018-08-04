@@ -1,5 +1,31 @@
 @charset "utf-8";
 
+.block {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fade-in {
+  animation-name: fadeIn;
+  animation-duration: 1.3s;
+  animation-timing-function: cubic-bezier(0, 0, 0.4, 1);
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
 /* GRID */
 
 * {
@@ -145,4 +171,8 @@ section {
     padding: 2em;
     text-align: center;
     text-transform: uppercase;
+}
+
+.footer a {
+    color: #fff;
 }
