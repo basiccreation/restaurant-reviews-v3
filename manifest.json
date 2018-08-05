@@ -14,30 +14,30 @@
     "src": "img/icon384.png",
     "sizes": "384x384",
     "type": "image/png"
-  }],,{
+  },{
     "src": "img/icon256.png",
     "sizes": "256x256",
     "type": "image/png"
-  }],,{
+  },{
     "src": "img/icon192.png",
     "sizes": "192x192",
     "type": "image/png"
-  }],"icons": [{
+  },{
     "src": "img/icon512.webp",
     "sizes": "512x512",
     "type": "image/webp"
   },{
     "src": "img/icon384.webp",
     "sizes": "384x384",
-    "type": "image/png"
-  }],,{
+    "type": "image/webp"
+  },{
     "src": "img/icon256.webp",
     "sizes": "256x256",
     "type": "image/webp"
-  }],,{
-    "src": "img/icon192.png",
+  },{
+    "src": "img/icon192.webp",
     "sizes": "192x192",
-    "type": "image/png"
+    "type": "image/webp"
   }],
   "related_applications": [{
     "platform": "play",

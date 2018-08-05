@@ -1,34 +1,44 @@
-//https://codepen.io/anon/pen/qyKJNO?editors=0010
+//https://deanhume.com/lazy-loading-images-using-intersection-observer/
 
 
-const images = document.querySelectorAll('img[data-src]');
+
+
+// Get all of the images that are marked up to lazy load
+const images = document.querySelectorAll('.js-lazy-image');
 const config = {
+  // If the image gets within 50px in the Y axis, start the download.
   rootMargin: '50px 0px',
   threshold: 0.01
 };
 
-let observer;
 
-if ('IntersectionObserver' in window) {
-  observer = new IntersectionObserver(onChange, config);
-  images.forEach(img => observer.observe(img));
-} else {
-  console.log('%cIntersection Observers not supported', 'color: red');
-  images.forEach(image => loadImage(image));
-}
+function onIntersection(entries) {
+  // Loop through the entries
+  entries.forEach(entry => {
+    // Are we in viewport?
+    if (entry.intersectionRatio > 0) {
 
-const loadImage = image => {
-  image.classList.add('fade-in');
-  image.src = image.dataset.src;
-}
-
-function onChange(changes, observer) {
-  changes.forEach(change => {
-    if (change.intersectionRatio > 0) {
       // Stop watching and load the image
-      loadImage(change.target);
-      observer.unobserve(change.target);
+      observer.unobserve(entry.target);
+      preloadImage(entry.target);
     }
-    
+  });
+}
+
+// The observer for the images on the page
+let observer = new IntersectionObserver(onIntersection, config);
+  images.forEach(image => {
+    observer.observe(image);
+  });
+
+  // If we don't have support for intersection observer, load the images immediately
+if (!('IntersectionObserver' in window)) {
+  Array.from(images).forEach(image => preloadImage(image));
+} else {
+  // It is supported, load the images
+  observer = new IntersectionObserver(onIntersection, config);
+  images.forEach(image => {
+ 
+   observer.observe(image);
   });
 }

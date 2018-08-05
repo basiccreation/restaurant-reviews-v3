@@ -19,7 +19,7 @@ if (window.indexedDB) {
 }; //end if indexedDB
 
 
-let request = window.indexedDB.open("RestaurantDatabase", 2);
+let request = window.indexedDB.open("RestaurantDatabase", 1);
 
 
 request.onerror = function(e) {
