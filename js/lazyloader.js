@@ -1,44 +1,28 @@
-//https://deanhume.com/lazy-loading-images-using-intersection-observer/
+//https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/
 
 
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
 
 
-// Get all of the images that are marked up to lazy load
-const images = document.querySelectorAll('.js-lazy-image');
-const config = {
-  // If the image gets within 50px in the Y axis, start the download.
-  rootMargin: '50px 0px',
-  threshold: 0.01
-};
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target;
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.srcset = lazyImage.dataset.srcset;
+          lazyImage.classList.remove("lazy");
+          lazyImageObserver.unobserve(lazyImage);
+        }
+      });
+    });
 
-
-function onIntersection(entries) {
-  // Loop through the entries
-  entries.forEach(entry => {
-    // Are we in viewport?
-    if (entry.intersectionRatio > 0) {
-
-      // Stop watching and load the image
-      observer.unobserve(entry.target);
-      preloadImage(entry.target);
-    }
-  });
-}
-
-// The observer for the images on the page
-let observer = new IntersectionObserver(onIntersection, config);
-  images.forEach(image => {
-    observer.observe(image);
-  });
-
-  // If we don't have support for intersection observer, load the images immediately
-if (!('IntersectionObserver' in window)) {
-  Array.from(images).forEach(image => preloadImage(image));
-} else {
-  // It is supported, load the images
-  observer = new IntersectionObserver(onIntersection, config);
-  images.forEach(image => {
- 
-   observer.observe(image);
-  });
-}
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage);
+    });
+  } else {
+    console.log("lazyImages not happening")
+    // Possibly fall back to a more compatible method here
+  }
+});

@@ -156,23 +156,17 @@ createRestaurantHTML = (restaurant) => {
     li.append(picture);
 
     const imagep = document.createElement("source");
-    imagep.setAttribute("data-Src", DBHelper.webpImageUrlForRestaurantList(restaurant));
+    imagep.className = "restaurant-img lazy";
+    imagep.setAttribute("data-Src", "placeholder.jpg");
     imagep.srcset = DBHelper.webpImageUrlForRestaurantList(restaurant);
-    imagep.className = "restaurant-img";
     imagep.alt = DBHelper.imageAltForRestaurant(restaurant);
     picture.append(imagep);    
 
-    const imagesource = document.createElement("source");
-    imagesource.setAttribute("data-Src", DBHelper.imageUrlForRestaurantList(restaurant));
-    imagesource.srcset = DBHelper.imageUrlForRestaurantList(restaurant);
-    imagesource.className = "restaurant-img";
-    imagesource.alt = DBHelper.imageAltForRestaurant(restaurant);
-    picture.append(imagesource);
-
     const image = document.createElement("img");
+    image.className = "restaurant-img lazy";
+    image.src = "placeholder.jpg";
     image.setAttribute("data-Src", DBHelper.imageUrlForRestaurantList(restaurant));
-    image.src = DBHelper.imageUrlForRestaurantList(restaurant);
-    image.className = "restaurant-img";
+    image.srcset = DBHelper.imageUrlForRestaurantList(restaurant);
     image.alt = DBHelper.imageAltForRestaurant(restaurant);
     picture.append(image);
 
