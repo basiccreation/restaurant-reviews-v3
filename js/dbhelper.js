@@ -242,7 +242,7 @@ class DBHelper {
         return (`./img/${restaurant.id}_lg.jpg`);
     }
 
-    static webImageUrlForRestaurant750(restaurant) {
+    static webpImageUrlForRestaurant750(restaurant) {
         return (`./img/${restaurant.id}_lg.webp`);
     }
 
