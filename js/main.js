@@ -135,9 +135,9 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
     const ul = document.getElementById("restaurants-list");
 
     restaurants.forEach(restaurant => {
-   
+
         ul.append(createRestaurantHTML(restaurant));
-           
+
     });
 
     addMarkersToMap();
@@ -160,7 +160,7 @@ createRestaurantHTML = (restaurant) => {
     imagep.setAttribute("data-Src", "placeholder.jpg");
     imagep.srcset = DBHelper.webpImageUrlForRestaurantList(restaurant);
     imagep.alt = DBHelper.imageAltForRestaurant(restaurant);
-    picture.append(imagep);    
+    picture.append(imagep);
 
     const image = document.createElement("img");
     image.className = "restaurant-img lazy";
@@ -200,13 +200,13 @@ createRestaurantHTML = (restaurant) => {
 
     const more = document.createElement("a");
     more.innerHTML = "View Details";
-  //  more.setAttribute = ('target', '_blank') = "_self";
+    //  more.setAttribute = ('target', '_blank') = "_self";
     more.target = "_self"
     more.tabIndex = 1;
 
     more.href = DBHelper.urlForRestaurant(restaurant);
     li.append(more);
- 
+
     return li;
 };
 
@@ -222,7 +222,7 @@ addMarkersToMap = (restaurants = self.restaurants) => {
         google.maps.event.addListener(marker, "click", () => {
             window.location.href = marker.url;
         });
-        
+
         self.markers.push(marker);
     });
 };

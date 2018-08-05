@@ -52,11 +52,11 @@ request.onupgradeneeded = function(e) {
                 return response.json();
             })
             .then(function(resturantsJSON) {
-                 var transaction = db.transaction("customers", "readwrite");
-                 var objstore = transaction.objectStore("customers");
-                     for (var i = 0; i < resturantsJSON.length; i++) { 
-                         objstore.add(resturantsJSON[i])
-                     }
+                var transaction = db.transaction("customers", "readwrite");
+                var objstore = transaction.objectStore("customers");
+                for (var i = 0; i < resturantsJSON.length; i++) {
+                    objstore.add(resturantsJSON[i])
+                }
             })
             .catch(err => {
                 console.log("JSON err");

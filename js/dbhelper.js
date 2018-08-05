@@ -1,4 +1,3 @@
-
 /*jshint esversion: 6 */
 /**
  * Common database helper functions.
@@ -15,15 +14,15 @@ class DBHelper {
     //     return `http://localhost:${port}/data/restaurants.json`;
     // }
 
-   //  static get DATABASE_URL() {
-   //      const port = 8000 // Change this to your server port
-   //  return `http://localhost:${port}/data/restaurants.json`;
-   // }
+    //  static get DATABASE_URL() {
+    //      const port = 8000 // Change this to your server port
+    //  return `http://localhost:${port}/data/restaurants.json`;
+    // }
 
     static get DATABASE_URL() {
         const port = 1337 // Change this to your server port
-    return `http://localhost:${port}/restaurants`;
-   }
+        return `http://localhost:${port}/restaurants`;
+    }
 
 
     /**
@@ -38,42 +37,42 @@ class DBHelper {
                 const restaurants = json;
 
                 callback(null, restaurants);
-            } else if  (xhr.status === 404) { //got a 404, load json from IDB 
+            } else if (xhr.status === 404) { //got a 404, load json from IDB 
 
                 let request = window.indexedDB.open("RestaurantDatabase", 1);
                 request.onsuccess = function(e) {
                     db = e.target.result;
 
-                function getAllItems(callback) {
+                    function getAllItems(callback) {
 
-                    var transaction = db.transaction("customers", "readwrite");
-                    var objstore = transaction.objectStore("customers");
-                    var items = [];
+                        var transaction = db.transaction("customers", "readwrite");
+                        var objstore = transaction.objectStore("customers");
+                        var items = [];
 
-                    transaction.oncomplete = function(evt) {  
+                        transaction.oncomplete = function(evt) {
                             callback(items);
                         };
-                     
+
                         var cursorRequest = objstore.openCursor();
-                     
+
                         cursorRequest.onerror = function(error) {
                             console.log(error);
                         };
-                     
-                        cursorRequest.onsuccess = function(evt) {                    
+
+                        cursorRequest.onsuccess = function(evt) {
                             var cursor = evt.target.result;
                             if (cursor) {
                                 items.push(cursor.value);
                                 cursor.continue();
                             }
                         };
-                }
+                    }
 
-                getAllItems(function (items) {
-                    const restaurants = items;
-                    callback(null, restaurants);
+                    getAllItems(function(items) {
+                        const restaurants = items;
+                        callback(null, restaurants);
 
-                });
+                    });
 
                 }; //end onsuccess
 
