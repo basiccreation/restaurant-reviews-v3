@@ -1,7 +1,7 @@
 {
   "name": "Restaurantreviewer",
   "short_name": "Reviews",
-  "start_url": ".",
+  "start_url": "https://basiccreation.github.io/studious-telegram/",
   "display": "standalone",
   "background_color": "#fdfdfd",
   "theme_color": "#fdfdfd",
