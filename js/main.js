@@ -1,5 +1,6 @@
 /*jshint esversion: 6 */
 
+
 let restaurants,
     neighborhoods,
     cuisines;
@@ -152,23 +153,22 @@ createRestaurantHTML = (restaurant) => {
     const li = document.createElement("li");
     li.className = "restaurant-li";
 
-    const picture = document.createElement("picture");
-    li.append(picture);
+    // const picture = document.createElement("picture");
+    // li.append(picture);
 
-    const imagep = document.createElement("source");
-    imagep.className = "restaurant-img lazy";
-    imagep.setAttribute("data-Src", "placeholder.jpg");
-    imagep.srcset = DBHelper.webpImageUrlForRestaurantList(restaurant);
+    const imagep = document.createElement("img");
+    imagep.className = " lozad restaurant-img";
     imagep.alt = DBHelper.imageAltForRestaurant(restaurant);
-    picture.append(imagep);
+    imagep.setAttribute("data-Src", DBHelper.webpImageUrlForRestaurantList(restaurant));
+    imagep.src = DBHelper.webpImageUrlForRestaurantList(restaurant);
+    li.append(imagep);
 
-    const image = document.createElement("img");
-    image.className = "restaurant-img lazy";
-    image.src = "placeholder.jpg";
-    image.setAttribute("data-Src", DBHelper.imageUrlForRestaurantList(restaurant));
-    image.srcset = DBHelper.imageUrlForRestaurantList(restaurant);
-    image.alt = DBHelper.imageAltForRestaurant(restaurant);
-    picture.append(image);
+    // const image = document.createElement("img");
+    // image.className = "lozad restaurant-img";
+    // image.alt = DBHelper.imageAltForRestaurant(restaurant);
+    // image.setAttribute("data-Src", DBHelper.imageUrlForRestaurantList(restaurant));
+    // image.src = DBHelper.imageUrlForRestaurantList(restaurant);
+    // li.append(image);
 
     const name = document.createElement("h2");
     name.tabIndex = 1;

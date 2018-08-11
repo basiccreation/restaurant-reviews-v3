@@ -205,44 +205,44 @@ class DBHelper {
      * Restaurant image URL.
      */
     static imageUrlForRestaurant(restaurant) {
-        return (`./img/${restaurant.id}_md.jpg`);
+        return (`http://localhost:8000/img/${restaurant.id}_md.jpg`);
     }
 
     static webpImageUrlForRestaurant(restaurant) {
-        return (`./img/${restaurant.id}_md.webp`);
+        return (`http://localhost:8000/img/${restaurant.id}_md.webp`);
     }
 
     /**
      * Restaurant image URL for restaurants-list.
      */
     static imageUrlForRestaurantList(restaurant) {
-        return (`./img/${restaurant.id}_sm.jpg`);
+        return (`http://localhost:8000/img/${restaurant.id}_sm.jpg`);
     }
 
     static webpImageUrlForRestaurantList(restaurant) {
-        return (`./img/${restaurant.id}_sm.webp`);
+        return (`http://localhost:8000/img/${restaurant.id}_sm.webp`);
     }
 
     /**
      * Restaurant image URL for restaurant viewport 500.
      */
     static imageUrlForRestaurant500(restaurant) {
-        return (`./img/${restaurant.id}_md.jpg`);
+        return (`http://localhost:8000/img/${restaurant.id}_md.jpg`);
     }
 
     static webpImageUrlForRestaurant500(restaurant) {
-        return (`./img/${restaurant.id}_md.webp`);
+        return (`http://localhost:8000/img/${restaurant.id}_md.webp`);
     }
 
     /**
      * Restaurant image URL for restaurant viewport 750.
      */
     static imageUrlForRestaurant750(restaurant) {
-        return (`./img/${restaurant.id}_lg.jpg`);
+        return (`http://localhost:8000/img/${restaurant.id}_lg.jpg`);
     }
 
     static webpImageUrlForRestaurant750(restaurant) {
-        return (`./img/${restaurant.id}_lg.webp`);
+        return (`http://localhost:8000/img/${restaurant.id}_lg.webp`);
     }
 
     /**

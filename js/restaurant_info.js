@@ -58,21 +58,15 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
 
     const image = document.getElementById("restaurant-img");
     image.className = "restaurant-img lazy";
-    image.src = DBHelper.imageUrlForRestaurant(restaurant);
     image.alt = DBHelper.imageAltForRestaurant(restaurant);
+    image.src = DBHelper.imageUrlForRestaurant(restaurant);
     image.setAttribute("data-Src", DBHelper.imageUrlForRestaurantList(restaurant));
 
     const image500 = document.getElementById("viewport500");
-    image500.className = "restaurant-img lazy";
-    image500.srcset = DBHelper.webpImageUrlForRestaurant500(restaurant);
     image500.setAttribute("data-Src", DBHelper.imageUrlForRestaurant500(restaurant));
 
-
     const image750 = document.getElementById("viewport750");
-    image750.className = "restaurant-img lazy";
-    image750.srcset = DBHelper.webpImageUrlForRestaurant750(restaurant);
     image750.setAttribute("data-Src", DBHelper.imageUrlForRestaurant750(restaurant));
-
 
     const cuisine = document.getElementById("restaurant-cuisine");
     cuisine.innerHTML = restaurant.cuisine_type;
