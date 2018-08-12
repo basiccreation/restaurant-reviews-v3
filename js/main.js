@@ -151,13 +151,13 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
 
 createRestaurantHTML = (restaurant) => {
     const li = document.createElement("li");
-    li.className = "restaurant-li";
+    li.className = "restaurant-li col-xs-12 col-l-6";
 
     // const picture = document.createElement("picture");
     // li.append(picture);
 
     const imagep = document.createElement("img");
-    imagep.className = " lozad restaurant-img";
+    imagep.className = " lozad left-s restaurant-img col-xs-12 col-s-6 col-l-12";
     imagep.alt = DBHelper.imageAltForRestaurant(restaurant);
     imagep.setAttribute("data-Src", DBHelper.webpImageUrlForRestaurantList(restaurant));
     imagep.src = DBHelper.webpImageUrlForRestaurantList(restaurant);
@@ -169,6 +169,9 @@ createRestaurantHTML = (restaurant) => {
     // image.setAttribute("data-Src", DBHelper.imageUrlForRestaurantList(restaurant));
     // image.src = DBHelper.imageUrlForRestaurantList(restaurant);
     // li.append(image);
+    const div = document.createElement("div");
+    div.className = "right-s col-xs-12 col-s-6 col-l-12";
+    li.append(div);
 
     const name = document.createElement("h2");
     name.tabIndex = 1;
@@ -176,29 +179,33 @@ createRestaurantHTML = (restaurant) => {
         restaurant.cuisine_type + " type food in " +
         restaurant.neighborhood;
     name.innerHTML = restaurant.name;
-    li.append(name);
+    div.append(name);
 
     /*cuisine only shows if selection is all*/
     const selectedCuisine = document.getElementById("cuisines-select").selectedIndex;
+    
     if (selectedCuisine == 0) {
         const cuisine = document.createElement("p");
+        cuisine.className = "cuisine col-s-4 col-xs-4";
         cuisine.innerHTML = restaurant.cuisine_type;
-        li.append(cuisine);
+        div.append(cuisine);
     }
 
     /*neighboorhood only shows if selection is all*/
     const selectedNeighborhood = document.getElementById("neighborhoods-select").selectedIndex;
     if (selectedNeighborhood == 0) {
         const neighborhood = document.createElement("p");
+        neighborhood.className = "neighborhood col-s-4 col-xs-4";
         neighborhood.innerHTML = restaurant.neighborhood;
-        li.append(neighborhood);
+        div.append(neighborhood);
     }
 
     const address = document.createElement("p");
     address.innerHTML = restaurant.address;
-    li.append(address);
+    div.append(address);
 
     const more = document.createElement("a");
+    more.className = "col-xs-12 col-s-12 col-l-12"
     more.innerHTML = "View Details";
     //  more.setAttribute = ('target', '_blank') = "_self";
     more.target = "_self"

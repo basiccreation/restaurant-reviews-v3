@@ -3,11 +3,6 @@
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
 
-/* For mobile phones: */
-    [class*="col-"] {
-        width: 100%;
-    }
-
     /* NAVIGATION */
     nav h1 a,
     nav h1 {
