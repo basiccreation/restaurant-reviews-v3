@@ -302,6 +302,15 @@ background-color: #8A4700;
 color:#fff;
 }
 
+.like {
+color: #8A4700;
+}
+
+.liked {
+color: #8A4700;
+visibility: none;
+}
+
 #restaurants-list li a:focus {
     background-color: #333;
 }

@@ -181,6 +181,12 @@ createRestaurantHTML = (restaurant) => {
     name.innerHTML = restaurant.name;
     div.append(name);
 
+    //images for like feature
+    const like = document.createElement("aside");
+    like.innerHTML = "<i class='far fa-heart'></i>"
+    //like.innerHTML = "<i class='fas fa-heart'></i>"
+    name.append(like);
+
     /*cuisine only shows if selection is all*/
     const selectedCuisine = document.getElementById("cuisines-select").selectedIndex;
     
