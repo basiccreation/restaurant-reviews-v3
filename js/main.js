@@ -182,10 +182,10 @@ createRestaurantHTML = (restaurant) => {
     div.append(name);
 
     //images for like feature
-    const like = document.createElement("aside");
-    like.innerHTML = "<i class='far fa-heart'></i>"
-    //like.innerHTML = "<i class='fas fa-heart'></i>"
-    name.append(like);
+    const favoriteIcon = document.createElement("aside");
+    favoriteIcon.innerHTML = " <i class='far fa-heart favorite_not_pressed'></i><i class='fas fa-heart favorite_pressed'";
+
+    name.append(favoriteIcon);
 
     /*cuisine only shows if selection is all*/
     const selectedCuisine = document.getElementById("cuisines-select").selectedIndex;

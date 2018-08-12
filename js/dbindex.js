@@ -42,6 +42,7 @@ request.onupgradeneeded = function(e) {
     objectStore.createIndex("name", "name", { unique: false });
     objectStore.createIndex("neighborhood", "neighborhood", { unique: false });
     objectStore.createIndex("cuisine_type", "cuisine_type", { unique: false });
+    objectStore.createIndex("is_favorite", "is_favorite", { unique: false });
 
     objectStore.transaction.oncomplete = function(e) {
 

@@ -302,13 +302,13 @@ background-color: #8A4700;
 color:#fff;
 }
 
-.like {
+.favorite_not_pressed {
 color: #8A4700;
 }
 
-.liked {
+.favorite_pressed {
 color: #8A4700;
-visibility: none;
+display: none;
 }
 
 #restaurants-list li a:focus {
