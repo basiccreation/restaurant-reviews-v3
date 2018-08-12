@@ -28,7 +28,7 @@ p {
 }
 
 body {
-    background-color: #fdfdfd;
+    background-color: #ffffe0;
     position: relative;
     font-size: 14px;
     display: flex;
@@ -86,7 +86,7 @@ section {
 }
 
 .maincontent {
-    background-color: #f3f3f3;
+    background-color: #ffffe0;
     text-align: center;
 }
 
@@ -177,11 +177,12 @@ nav h1 a:focus {
 
 
 
+
 /*  Map  */
 
 #map {
     height: 400px;
-    background-color: #ccc;
+    background-color: #ffffe0;
 }
 
 
@@ -229,17 +230,17 @@ nav h1 a:focus {
 }
 
 #restaurants-list {
-    background-color: #f3f3f3;
+    background-color: #ffffe0;
     list-style: outside none none;
 }
 
 #restaurants-list li {
-    background-color: #ccc;
+    background-color: #fff;
     font-family: Arial, sans-serif;
     min-height: 430px;
     text-align: left;
     border-radius: 25px 0px 25px 0px;
-    border-bottom: 20px solid #ccc;
+    border-bottom: 20px solid #fff;
     position: relative;
     margin-top:30px;
     margin-left:-20px;
