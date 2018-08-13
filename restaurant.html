@@ -1,5 +1,6 @@
 <!--
     https://stackoverflow.com/questions/15103890/submit-todays-date-as-a-hidden-form-input-value
+    https://www.w3schools.com/css/css_dropdowns.asp
 -->
 <!DOCTYPE html>
 <html>
@@ -63,70 +64,59 @@
             </aside>
         </section>
         <!-- End restaurant-container -->
-         <section id="review-form-container">
+        <section id="review-form-container">
             <div class="container">
-  <form action="/url">
-    <row>
-    <label for="name">Name</label>
-    <input type="text" id="name" name="name" placeholder="Your name..">
-</row>
+                <form action="/url">
+                    <row class = "dropdown col-xs-11">
+                        <label class = "col-xs-12 did-you-like-it" for="rating">Did you already go?</label>
+                        <select class = "col-xs-12 dropdown-content" id="rating" name="rating">
+                          <option value="0">How do you rate the restaurant?</option>
+                          <option value="5">Loved it!</option>
+                          <option value="4">Food was great, but ...</option>
+                          <option value="3">On the fence.</option>
+                          <option value="2">Had better.</option>
+                          <option value="1">Never going back.</option>
+                        </select>
+                    </row>
+                    <row>
+                        <textarea class = "col-xs-11" id="comment" name="comment" placeholder="What did you think of the food, would you go back, how were the servers?" style="height:200px"></textarea>
+                        <!-- hidden date field-->
 
-<row>
-    <label for="rating">Rating</label>
-    <select id="rating" name="rating">
-      <option value="5">Loved it!</option>
-      <option value="4">Four stars</option>
-      <option value="3">I'm on the fence.</option>
-      <option value="2">Two stars</option>
-      <option value="1">Never going back</option>
-    </select>
-    </row>
+                        <input type="hidden" name="startdate" id="todayDate"/>
+                        <script type="text/javascript">
+                        function getDate()
+                        {
+                            var today = new Date();
+                            var dd = today.getDate();
+                            var mm = today.getMonth()+1; //January is 0!
+                            var yyyy = today.getFullYear();
+                            if(dd<10){dd='0'+dd} if(mm<10){mm='0'+mm}
+                            today = yyyy+""+mm+""+dd;
 
-<row>
-    <label for="comment">Comment</label>
-    <textarea id="comment" name="comment" placeholder="What did you think of the food, would you go back, how were the servers?" style="height:200px"></textarea>
-<!-- hidden date field-->
+                            document.getElementById("todayDate").value = today;
+                        }
 
-<input type="hidden" name="startdate" id="todayDate"/>
-<script type="text/javascript">
-function getDate()
-{
-    var today = new Date();
-    var dd = today.getDate();
-    var mm = today.getMonth()+1; //January is 0!
-    var yyyy = today.getFullYear();
-    if(dd<10){dd='0'+dd} if(mm<10){mm='0'+mm}
-    today = yyyy+""+mm+""+dd;
+                        //call getDate() when loading the page
+                        getDate();
+                        </script>
+                    </row>
+                    <row>
+                        <input class = "col-xs-11" type="text" id="name" name="name" placeholder="Your name..">
+                    </row>
+                    <row>
+                        <input  class = "submit-button col-xs-6" type="submit" value="Submit">
 
-    document.getElementById("todayDate").value = today;
-}
-
-//call getDate() when loading the page
-getDate();
-</script>
-</row>
-
-<row>
-
-    <input type="submit" value="Submit">
-
-</row>
-  </form>
-</div>
-
-                name -> text
-                date -> today's date
-                rating -> rating
-                comment -> text field
-            </form>
+                    </row>
+                </form>
+            </div>
         </section>
         <!-- End reviews-form-container -->
-        <section id="reviews-container">
-            <ul id="reviews-list"></ul>
+        <section class = "col-xs-11" id="reviews-container">
+            <ul class = "col-xs-11" id="reviews-list"></ul>
         </section>
         <!-- End reviews-container -->
     </main>
-    <footer class="footer">
+    <footer class="footer col-xs-12">
         Copyright (c) 2017 <a href="/">Restaurant Reviews</a> All Rights Reserved.
     </footer>
     <!-- Scripts -->
