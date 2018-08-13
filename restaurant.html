@@ -1,3 +1,6 @@
+<!--
+    https://stackoverflow.com/questions/15103890/submit-todays-date-as-a-hidden-form-input-value
+-->
 <!DOCTYPE html>
 <html>
 
@@ -29,7 +32,7 @@
 
 <body>
     <header>
-        <nav>
+        <nav class = "col-xs-12">
             <h1 role="navigation" tabindex="1"><a target = "_self" aria-label="Click to get to home page" href="/">Restaurants Reviews</a></h1>
             <section aria-label=Breadcrumb tabindex="1" class="breadcrumb-container">
                 <ul id="breadcrumb">
@@ -39,26 +42,85 @@
             <!-- End breadcrumb-container -->
         </nav>
     </header>
-    <main class="maincontent">
+    <main class="maincontent col-xs-12>
         <!-- Beginning map -->
-        <section id="map-container">
+        <section  class = "col-xs-12" id="map-container">
             <div role="application" tabindex="-1" id="map"></div>
         </section>
         <!-- End map-container -->
-        <section id="restaurant-container">
-            <h2 tabindex="1" id="restaurant-name"></h2>
-            <picture>
+        <section class = "col-xs-12" id="restaurant-container">
+            <h2 class = "col-xs-12" tabindex="1" id="restaurant-name"></h2>
+            <p tabindex="1" id="restaurant-cuisine"></p>
+             <i class='far fa-heart favorite_not_pressed'></i><i class='fas fa-heart favorite_pressed'></i>
+            <picture  class = "col-xs-12">
                 <source id="viewport500" media="(min-width: 500px)">
                 <source id="viewport750" media="(min-width: 750px)">
                 <img tabindex="-1" id="restaurant-img">
             </picture>
-            <p tabindex="1" id="restaurant-cuisine"></p>
-            <address tabindex="1" id="restaurant-address"></address>
-            <aside>
-                <table tabindex="1" id="restaurant-hours"></table>
+            <address class = "col-xs-12" tabindex="1" id="restaurant-address"></address>
+            <aside class = "hours-container col-xs-9">
+                <table class = "hours-table tabindex="1" id="restaurant-hours"></table>
             </aside>
         </section>
         <!-- End restaurant-container -->
+         <section id="review-form-container">
+            <div class="container">
+  <form action="/url">
+    <row>
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" placeholder="Your name..">
+</row>
+
+<row>
+    <label for="rating">Rating</label>
+    <select id="rating" name="rating">
+      <option value="5">Loved it!</option>
+      <option value="4">Four stars</option>
+      <option value="3">I'm on the fence.</option>
+      <option value="2">Two stars</option>
+      <option value="1">Never going back</option>
+    </select>
+    </row>
+
+<row>
+    <label for="comment">Comment</label>
+    <textarea id="comment" name="comment" placeholder="What did you think of the food, would you go back, how were the servers?" style="height:200px"></textarea>
+<!-- hidden date field-->
+
+<input type="hidden" name="startdate" id="todayDate"/>
+<script type="text/javascript">
+function getDate()
+{
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; //January is 0!
+    var yyyy = today.getFullYear();
+    if(dd<10){dd='0'+dd} if(mm<10){mm='0'+mm}
+    today = yyyy+""+mm+""+dd;
+
+    document.getElementById("todayDate").value = today;
+}
+
+//call getDate() when loading the page
+getDate();
+</script>
+</row>
+
+<row>
+
+    <input type="submit" value="Submit">
+
+</row>
+  </form>
+</div>
+
+                name -> text
+                date -> today's date
+                rating -> rating
+                comment -> text field
+            </form>
+        </section>
+        <!-- End reviews-form-container -->
         <section id="reviews-container">
             <ul id="reviews-list"></ul>
         </section>

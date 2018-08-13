@@ -57,7 +57,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
     address.innerHTML = restaurant.address;
 
     const image = document.getElementById("restaurant-img");
-    image.className = "restaurant-img lazy";
+    image.className = "restaurant-img col-xs-12 lazy";
     image.alt = DBHelper.imageAltForRestaurant(restaurant);
     image.src = DBHelper.imageUrlForRestaurant(restaurant);
     image.setAttribute("data-Src", DBHelper.imageUrlForRestaurantList(restaurant));

@@ -183,7 +183,7 @@ createRestaurantHTML = (restaurant) => {
 
     //images for like feature
     const favoriteIcon = document.createElement("aside");
-    favoriteIcon.innerHTML = " <i class='far fa-heart favorite_not_pressed'></i><i class='fas fa-heart favorite_pressed'";
+    favoriteIcon.innerHTML = " <i class='far fa-heart favorite_not_pressed'></i><i class='fas fa-heart favorite_pressed'></i>";
 
     name.append(favoriteIcon);
 

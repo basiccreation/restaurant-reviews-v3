@@ -337,7 +337,6 @@ display: none;
 #reviews-container {
     border-bottom: 1px solid #d9d9d9;
     border-top: 1px solid #fff;
-    padding: 40px 40px 30px;
 }
 
 #restaurant-name:focus {
@@ -347,12 +346,21 @@ display: none;
 #restaurant-name {
     color: #8A4700;
     font-family: Arial, sans-serif;
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: 200;
     letter-spacing: 0;
-    margin: 15px 0 30px;
+    margin-top: 1em;
     text-transform: uppercase;
     line-height: 1.1;
+}
+
+#restaurant-img {
+    background-color: #ccc;
+    display: block;
+    margin: 0;
+    width: : 50%;
+    border-radius: 25px 0px 25px 0px;
+
 }
 
 #restaurant-address:focus {
@@ -380,6 +388,11 @@ display: none;
     text-transform: uppercase;
 }
 
+.hours-container {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);}
+
 #restaurant-hours:focus {
     background-color: #8A4700;
 }
@@ -388,9 +401,16 @@ display: none;
     font-size: 1.05em;
     color: #333;
     text-align: left;
+    vertical-align: top;
+    padding-top: .25em;
+    border-bottom: solid #8A4700 0.05em;
 }
 
 /*  Reviews   */
+
+.container row {
+    display: block;
+}
 
 #reviews-container {
     padding: 30px 40px;
