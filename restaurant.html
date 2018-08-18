@@ -33,7 +33,7 @@
 
 <body>
     <header>
-        <nav class = "col-xs-12">
+        <nav class = "col-xs-12 col-s-12">
             <h1 role="navigation" tabindex="1"><a target = "_self" aria-label="Click to get to home page" href="/">Restaurants Reviews</a></h1>
             <section aria-label=Breadcrumb tabindex="1" class="breadcrumb-container">
                 <ul id="breadcrumb">
@@ -43,29 +43,32 @@
             <!-- End breadcrumb-container -->
         </nav>
     </header>
-    <main class="maincontent col-xs-12>
+    <main class="maincontent col-xs-12 col-s-12">
         <!-- Beginning map -->
-        <section  class = "col-xs-12" id="map-container">
+        <section  class = "col-xs-12 col-s-4 right-s" id="map-container">
             <div role="application" tabindex="-1" id="map"></div>
         </section>
         <!-- End map-container -->
-        <section class = "col-xs-12" id="restaurant-container">
-            <h2 class = "col-xs-12" tabindex="1" id="restaurant-name"></h2>
-            <p tabindex="1" id="restaurant-cuisine"></p>
-             <i class='far fa-heart favorite_not_pressed'></i><i class='fas fa-heart favorite_pressed'></i>
-            <picture  class = "col-xs-12">
+        <section class = "col-xs-12 col-s-8 left-s" id="restaurant-container">
+            
+            <h2 class = "col-xs-12 col-s-12 left-s" tabindex="1" id="restaurant-name"></h2>
+              <p class = "cuisine col-s-6 left-s" tabindex="1" id="restaurant-cuisine"></p>
+              <aside class = "left-s favorite-hearts col-s-6"><i class='far fa-heart favorite_not_pressed'></i><i class='fas fa-heart favorite_pressed'></i></aside>
+            
+            <picture  class = "picture col-xs-12 col-s-10 left-s">
                 <source id="viewport500" media="(min-width: 500px)">
                 <source id="viewport750" media="(min-width: 750px)">
-                <img tabindex="-1" id="restaurant-img">
+                <img class = " col-xs-12 col-s-8 left-s" tabindex="-1" id="restaurant-img">
             </picture>
-            <address class = "col-xs-12" tabindex="1" id="restaurant-address"></address>
-            <aside class = "hours-container col-xs-9">
+            <address class = "col-s-12 left-s" tabindex="1" id="restaurant-address"></address>
+            <aside class = "hours-container col-xs-12 col-s-12 left-s">
+                <div class="arrow-down"></div>
                 <table class = "hours-table tabindex="1" id="restaurant-hours"></table>
             </aside>
         </section>
         <!-- End restaurant-container -->
-        <section id="review-form-container">
-            <div class="container">
+        <section class = "reviews col-s-4 right-s" id="review-form-container">
+            <div class="left-s col-6-s container">
                 <form action="/url">
                     <row class = "dropdown col-xs-11">
                         <label class = "col-xs-12 did-you-like-it" for="rating">Did you already go?</label>
@@ -74,7 +77,7 @@
                           <option value="5">Loved it!</option>
                           <option value="4">Food was great, but ...</option>
                           <option value="3">On the fence.</option>
-                          <option value="2">Had better.</option>
+                          <option value="2">Have had better.</option>
                           <option value="1">Never going back.</option>
                         </select>
                     </row>
@@ -104,14 +107,14 @@
                         <input class = "col-xs-11" type="text" id="name" name="name" placeholder="Your name..">
                     </row>
                     <row>
-                        <input  class = "submit-button col-xs-6" type="submit" value="Submit">
+                        <input  class = "submit-button col-xs-12" type="submit" value="Submit">
 
                     </row>
                 </form>
             </div>
         </section>
         <!-- End reviews-form-container -->
-        <section class = "col-xs-11" id="reviews-container">
+        <section class = "col-xs-11 col-6-s right-s" id="reviews-container">
             <ul class = "col-xs-11" id="reviews-list"></ul>
         </section>
         <!-- End reviews-container -->
