@@ -45,11 +45,11 @@
     </header>
     <main class="maincontent col-xs-12 col-s-12">
         <!-- Beginning map -->
-        <section  class = "col-xs-12 col-s-4 right-s" id="map-container">
+        <section  class = "col-xs-12 col-s-4 col-m-5 right-s" id="map-container">
             <div role="application" tabindex="-1" id="map"></div>
         </section>
         <!-- End map-container -->
-        <section class = "col-xs-12 col-s-8 left-s" id="restaurant-container">
+        <section class = "col-xs-12 col-s-8 col-m-7 left-s" id="restaurant-container">
             
             <h2 class = "col-xs-12 col-s-12 left-s" tabindex="1" id="restaurant-name"></h2>
               <p class = "cuisine col-s-6 left-s" tabindex="1" id="restaurant-cuisine"></p>
@@ -67,12 +67,12 @@
             </aside>
         </section>
         <!-- End restaurant-container -->
-        <section class = "reviews col-s-4 right-s" id="review-form-container">
-            <div class="left-s col-6-s container">
+        <section class = "reviews col-s-5 left-s" id="review-form-container">
+            <div class="right-s col-12-s container">
                 <form action="/url">
-                    <row class = "dropdown col-xs-11">
-                        <label class = "col-xs-12 did-you-like-it" for="rating">Did you already go?</label>
-                        <select class = "col-xs-12 dropdown-content" id="rating" name="rating">
+                    <row class = "dropdown col-m-11 col-xs-11">
+                        <label class = "col-xs-12 col-m-11 did-you-like-it" for="rating">Did you already go?</label>
+                        <select class = "col-xs-12 col-m-12 dropdown-content" id="rating" name="rating">
                           <option value="0">How do you rate the restaurant?</option>
                           <option value="5">Loved it!</option>
                           <option value="4">Food was great, but ...</option>
@@ -82,7 +82,7 @@
                         </select>
                     </row>
                     <row>
-                        <textarea class = "col-xs-11" id="comment" name="comment" placeholder="What did you think of the food, would you go back, how were the servers?" style="height:200px"></textarea>
+                        <textarea class = "col-xs-11 col-s-11 col-m-11" id="comment" name="comment" placeholder="What did you think of the food, would you go back, how were the servers?" style="height:200px"></textarea>
                         <!-- hidden date field-->
 
                         <input type="hidden" name="startdate" id="todayDate"/>
@@ -104,18 +104,18 @@
                         </script>
                     </row>
                     <row>
-                        <input class = "col-xs-11" type="text" id="name" name="name" placeholder="Your name..">
+                        <input class = "col-xs-11 col-s-11 col-m-11" type="text" id="name" name="name" placeholder="Your name..">
                     </row>
                     <row>
-                        <input  class = "submit-button col-xs-12" type="submit" value="Submit">
+                        <input  class = "submit-button col-xs-11 col-s-11 col-m-11" type="submit" value="Submit">
 
                     </row>
                 </form>
             </div>
         </section>
         <!-- End reviews-form-container -->
-        <section class = "col-xs-11 col-6-s right-s" id="reviews-container">
-            <ul class = "col-xs-11" id="reviews-list"></ul>
+        <section class = "col-xs-11 col-5-s left-s" id="reviews-container">
+            <ul class = "col-xs-12" id="reviews-list"></ul>
         </section>
         <!-- End reviews-container -->
     </main>

@@ -725,7 +725,6 @@ nav h1 a:focus {
 
     #comment {
         max-height: 100px;
-        width:100%;
         margin-top: 0.5em 0em 0.5em;
     }
 
@@ -829,6 +828,11 @@ nav h1 a:focus {
         .col-m-12 {
             width: 100%;
         }
+
+        #reviews-container {
+    position:relative;
+    left: 50%;
+    transform: translateX(-50%);        }
     }
     /* Large devices (laptops/desktops, 992px and up) */
     @media only screen and (min-width: 992px) {
