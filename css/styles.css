@@ -504,10 +504,11 @@ nav h1 a:focus {
 }
 
 .submit-button {
-    background-color: #FFF;
+    background-color: #f3d4b3;
     /* Green */
     border: none;
-    color: #8A4700;
+    color: #000;
+    font-size: 3em;
     text-align: center;
     text-decoration: none;
     display: inline-block;
