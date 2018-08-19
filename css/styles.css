@@ -323,13 +323,9 @@ nav h1 a:focus {
     color: #fff;
 }
 
-.favorite_not_pressed {
+.favorite-hearts {
     color: #8A4700;
-}
-
-.favorite_pressed {
-    color: #8A4700;
-    display: none;
+    font-size: 3em;
 }
 
 #restaurants-list li a:focus {

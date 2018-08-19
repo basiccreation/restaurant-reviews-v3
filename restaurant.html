@@ -1,6 +1,7 @@
 <!--
     https://stackoverflow.com/questions/15103890/submit-todays-date-as-a-hidden-form-input-value
-    https://www.w3schools.com/css/css_dropdowns.asp
+    https://www.w3schools.com 
+    ://developer.mozilla.org
 -->
 <!DOCTYPE html>
 <html>
@@ -53,7 +54,7 @@
             
             <h2 class = "col-xs-12 col-s-12 left-s" tabindex="1" id="restaurant-name"></h2>
               <p class = "cuisine col-s-6 left-s" tabindex="1" id="restaurant-cuisine"></p>
-              <aside class = "left-s favorite-hearts col-s-6"><i class='far fa-heart favorite_not_pressed'></i><i class='fas fa-heart favorite_pressed'></i></aside>
+              <aside class = "left-s favorite-hearts col-s-6"><i onclick="myFunction(this)" class='far fa-heart'></i></aside>
             
             <picture  class = "picture col-xs-12 col-s-10 left-s">
                 <source id="viewport500" media="(min-width: 500px)">
@@ -123,6 +124,13 @@
         Copyright (c) 2017 <a href="/">Restaurant Reviews</a> All Rights Reserved.
     </footer>
     <!-- Scripts -->
+
+    <script>
+function myFunction(x) {
+    x.classList.toggle("fas", "fa-heart");
+}
+</script>
+
     <!-- Service Worker -->
     <script type="text/javascript" src="./check-serviceworker.js"></script>
     <!-- 
