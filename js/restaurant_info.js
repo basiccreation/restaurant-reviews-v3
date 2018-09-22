@@ -53,11 +53,13 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
     const name = document.getElementById("restaurant-name");
     name.innerHTML = restaurant.name;
 
+    const isFavorite = document.getElementById("heart");
+
+
     const address = document.getElementById("restaurant-address");
     address.innerHTML = restaurant.address;
 
     const image = document.getElementById("restaurant-img");
-    image.className = "restaurant-img col-xs-12 lazy";
     image.alt = DBHelper.imageAltForRestaurant(restaurant);
     image.src = DBHelper.imageUrlForRestaurant(restaurant);
     image.setAttribute("data-Src", DBHelper.imageUrlForRestaurantList(restaurant));
@@ -179,3 +181,27 @@ getParameterByName = (name, url) => {
         return "";
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 };
+
+/**
+ * Toggle favorite heart.
+ */
+
+ //favoriteRestaurantChecked
+ //favoriteRestaurantUnchecked
+function toggleFavorite() {
+    const favorite = document.getElementById("heart"); 
+
+    if (is_favorite === false) {
+        favorite.classList.toggle("fas");
+        favorite.src = DBHelper.favoriteRestaurantChecked(restaurant);
+    }
+    else if (is_favorite === true) {
+        favorite.classList.toggle("far");
+        favorite.src = DBHelper.favoriteRestaurantUnchecked(restaurant);
+    }
+    else {
+        colsole.log ("toggleFavorite not working as planned")
+    }
+
+
+ }

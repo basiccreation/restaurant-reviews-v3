@@ -54,12 +54,14 @@
             
             <h2 class = "col-xs-12 col-s-12 left-s" tabindex="1" id="restaurant-name"></h2>
               <p class = "cuisine col-s-6 left-s" tabindex="1" id="restaurant-cuisine"></p>
-              <aside class = "left-s favorite-hearts col-s-6"><i onclick="myFunction(this)" class='far fa-heart'></i></aside>
+              <aside class = "left-s favorite-hearts col-s-6">
+                <i onclick='toggleFavorite(this)' id = 'heart' class=' far fa-heart'></i>
+              </aside>
             
-            <picture  class = "picture col-xs-12 col-s-10 left-s">
-                <source id="viewport500" media="(min-width: 500px)">
-                <source id="viewport750" media="(min-width: 750px)">
-                <img class = " col-xs-12 col-s-8 left-s" tabindex="-1" id="restaurant-img">
+            <picture class = "picture col-xs-12 col-s-12 col-m-12 col-l-12 left-s">
+                <source id = "viewport500" media="(min-width: 500px)">
+                <source id = "viewport750" media="(min-width: 750px)">
+                <img class = "col-xs-12 col-s-10 col-m-10 col-l-10 left-s" tabindex="-1" id="restaurant-img">
             </picture>
             <address class = "col-s-12 left-s" tabindex="1" id="restaurant-address"></address>
             <aside class = "hours-container col-xs-12 col-s-12 left-s">
@@ -125,11 +127,6 @@
     </footer>
     <!-- Scripts -->
 
-    <script>
-function myFunction(x) {
-    x.classList.toggle("fas", "fa-heart");
-}
-</script>
 
     <!-- Service Worker -->
     <script type="text/javascript" src="./check-serviceworker.js"></script>

@@ -181,9 +181,16 @@ createRestaurantHTML = (restaurant) => {
     name.innerHTML = restaurant.name;
     div.append(name);
 
-    //images for like feature
+    //icons for like feature
     const favoriteIcon = document.createElement("aside");
-    favoriteIcon.innerHTML = " <i class='far fa-heart favorite_not_pressed'></i><i class='fas fa-heart favorite_pressed'></i>";
+    if (restaurant.is_favorite == true) {
+        favoriteIcon.innerHTML = "<i class='fas fa-heart'></i>";
+       }
+    if (restaurant.is_favorite == false) {
+        favoriteIcon.innerHTML = "<i class='far fa-heart'></i>";
+        }
+
+
 
     name.append(favoriteIcon);
 

@@ -24,6 +24,10 @@ class DBHelper {
         return `http://localhost:${port}/restaurants`;
     }
 
+    /**
+    * Set all favorites to false initiall
+    */
+
 
     /**
      * Fetch all restaurants.
@@ -193,6 +197,21 @@ class DBHelper {
             }
         });
     }
+
+    /**
+     * Restaurant favorite checked.
+     */
+    static favoriteRestaurantChecked(restaurant) {
+        return (`http://localhost:1337/restaurants/<restaurant_id>/?is_favorite=true`);
+    }
+
+   /**
+     * Restaurant favorite not checked.
+     */
+    static favoriteRestaurantUnchecked(restaurant) {
+        return (`http://localhost:1337/restaurants/<restaurant_id>/?is_favorite=false`);
+    }
+
 
     /**
      * Restaurant page URL.
