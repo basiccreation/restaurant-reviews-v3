@@ -408,6 +408,7 @@ nav h1 a:focus {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+    margin-left: 1em;
 }
 
 #restaurant-hours:focus {
@@ -529,20 +530,19 @@ input:focus:invalid {
     text-align: left;
 }
 
-#reviews-container h3:focus {
+#review-title:focus {
     background-color: #333;
     color: #fff;
 }
 
-#reviews-container h3 {
+#review-title {
     font-size: 1.75em;
     letter-spacing: -1px;
-    padding-bottom: 1pt;
     color: #8A4700;
+    margin-left: 1em;
     font-family: Arial, sans-serif;
     font-weight: 200;
     letter-spacing: 0;
-    margin: 15px 0 30px;
     text-transform: uppercase;
     line-height: 1.1;
 }
@@ -559,7 +559,6 @@ input:focus:invalid {
     display: block;
     list-style-type: none;
     overflow: hidden;
-    padding: 0 20px 20px;
     min-width: 300px;
     max-width: 750px;
     border-radius: 25px 0px 25px 0px;
@@ -582,7 +581,6 @@ input:focus:invalid {
     background-color: #333;
     height: 50px;
     display: block;
-    margin-bottom: 10px;
 }
 
 #reviews-list div p {
@@ -754,6 +752,7 @@ input:focus:invalid {
         left: 10%;
         transform: none;
     }
+
     #map-container,
     .favorite-hearts,
     #restaurant-name {

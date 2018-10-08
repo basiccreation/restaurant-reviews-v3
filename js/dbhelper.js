@@ -21,20 +21,17 @@ class DBHelper {
 
     static get DATABASE_URL() {
         const port = 1337 // Change this to your server port
-        return `http://localhost:${port}/restaurants`;
+        return `http://localhost:${port}`;
     }
-
-    /**
-    * Set all favorites to false initiall
-    */
-
 
     /**
      * Fetch all restaurants.
      */
     static fetchRestaurants(callback) {
+        const RES = `/restaurants`;
+
         let xhr = new XMLHttpRequest();
-        xhr.open("GET", DBHelper.DATABASE_URL);
+        xhr.open("GET", DBHelper.DATABASE_URL + RES);
         xhr.onload = () => {
             if (xhr.status === 200) { // Got a success response from server!
                 const json = JSON.parse(xhr.responseText);
@@ -87,6 +84,7 @@ class DBHelper {
         };
         xhr.send();
     }
+
 
     /**
      * Fetch a restaurant by its ID.

@@ -30,6 +30,7 @@ fetchRestaurantFromURL = (callback) => {
         return;
     }
     const id = getParameterByName("id");
+    
     if (!id) { // no id found in URL
         error = "No restaurant id in URL";
         callback(error, null);
@@ -55,7 +56,6 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
 
     const isFavorite = document.getElementById("heart");
 
-
     const address = document.getElementById("restaurant-address");
     address.innerHTML = restaurant.address;
 
@@ -73,12 +73,17 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
     const cuisine = document.getElementById("restaurant-cuisine");
     cuisine.innerHTML = restaurant.cuisine_type;
 
+    const ul = document.getElementById("reviews-list");
+    const title = document.getElementById("review-title");
+    title.className = "review-title";
+    title.innerHTML = "What other people say about " + restaurant.name;
+    title.tabIndex = 1;
+    ul.prepend(title);
+
     // fill operating hours
     if (restaurant.operating_hours) {
         fillRestaurantHoursHTML();
     }
-    // fill reviews
-    fillReviewsHTML();
 };
 
 /**
@@ -102,54 +107,76 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
 };
 
 /**
- * Create all reviews HTML and add them to the webpage.
- */
-fillReviewsHTML = (reviews = self.restaurant.reviews) => {
-    const container = document.getElementById("reviews-container");
-    const title = document.createElement("h3");
-    title.innerHTML = "What other people say about " + self.restaurant.name;
-    title.tabIndex = 1;
-    container.appendChild(title);
-
-    if (!reviews) {
-        const noReviews = document.createElement("p");
-        noReviews.innerHTML = "No reviews yet!";
-        container.appendChild(noReviews);
-        return;
+* load in reviews
+*/
+function getID( name,href )
+    {
+      name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+      var regexS = "[\\?&]"+name+"=([^&#]*)";
+      var regex = new RegExp( regexS );
+      var results = regex.exec( href );
+      if( results == null )
+        return "";
+      else
+        return decodeURIComponent(results[1].replace(/\+/g, " "));
     }
+
+   let restaurantIDfromPage = getID('id', window.location);
+   const reviewURL = "http://localhost:1337/reviews/?restaurant_id=" + restaurantIDfromPage;
+   let currentRestaurantName = (restaurant = self.restaurant) => {
+     console.log(restaurant.name);
+    };
+
+   fetch(reviewURL)
+   .then(function(response) { 
+        return response.json(); 
+    })
+   .then(function(json) {
+         return json;
+   })
+   .then(function(reviews) {
+    const container = document.getElementById("reviews-container");
+
+        if (!reviews) {
+            const noReviews = document.createElement("p");
+            noReviews.innerHTML = "No reviews yet!";
+            container.appendChild(noReviews);
+            return;
+        }
+    
     const ul = document.getElementById("reviews-list");
     reviews.forEach(review => {
         ul.appendChild(createReviewHTML(review));
     });
     container.appendChild(ul);
-};
+
+   });
 
 /**
  * Create review HTML and add it to the webpage.
  */
 createReviewHTML = (review) => {
     const li = document.createElement("li");
+    li.className = "col-s-6 col-m-5 col-l-3 left-m left-s"
 
     const div = document.createElement("div");
     li.appendChild(div);
 
     const name = document.createElement("p");
     name.innerHTML = review.name;
+    name.className = "review-name";
     name.tabIndex = 1;
     div.appendChild(name);
 
-    const date = document.createElement("p");
-    date.innerHTML = review.date;
-    date.tabIndex = 1;
-    div.appendChild(date);
-
     const rating = document.createElement("p");
     rating.innerHTML = `Rating: ${review.rating}`;
+    rating.className = "review-rating";
     rating.tabIndex = 1;
     li.appendChild(rating);
 
     const comments = document.createElement("p");
     comments.innerHTML = review.comments;
+    comments.className = "review-comments";
     comments.tabIndex = 1;
     li.appendChild(comments);
 
