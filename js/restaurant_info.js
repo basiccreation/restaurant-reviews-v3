@@ -157,7 +157,7 @@ function getID( name,href )
  */
 createReviewHTML = (review) => {
     const li = document.createElement("li");
-    li.className = "col-s-6 col-m-5 col-l-3 left-m left-s"
+    li.className = "col-l-3 left-m left-s"
 
     const div = document.createElement("div");
     li.appendChild(div);
