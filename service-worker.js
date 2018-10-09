@@ -24,7 +24,7 @@
 // cache, then increment the CACHE_VERSION value. It will kick off the service worker update
 // flow and the old cache(s) will be purged as part of the activate event handler when the
 // updated service worker is activated.
-var CACHE_VERSION = 1;
+var CACHE_VERSION = 2;
 var CURRENT_CACHES = {
   font: 'review-cache-v' + CACHE_VERSION
 };
@@ -84,13 +84,17 @@ self.addEventListener('fetch', function(event) {
               response.headers.has("content-type") &&
               response.headers.get("content-type").match(/^image\//i) ||
               
-               response.status < 400 &&
-               response.headers.has("content-type") &&
-               response.headers.get("content-type").match(/^text\//i) ||
+              response.status < 400 &&
+              response.headers.has("content-type") &&
+              response.headers.get("content-type").match(/^text\//i) ||
+
+              response.status < 400 &&
+              response.headers.has("content-type") &&
+              response.headers.get("content-type").match(/^svg+xml\//i) ||
               
-               response.status < 400 &&
-               response.headers.has("content-type") &&
-               response.headers.get("content-type").match(/^application\//i)
+              response.status < 400 &&
+              response.headers.has("content-type") &&
+              response.headers.get("content-type").match(/^application\//i)
 
               ) {
             // This avoids caching responses that we know are errors (i.e. HTTP status code of 4xx or 5xx).

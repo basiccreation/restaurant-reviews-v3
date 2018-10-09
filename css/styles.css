@@ -323,8 +323,8 @@ nav h1 a:focus {
     color: #fff;
 }
 
-.favorite-hearts {
-    color: #8A4700;
+.favorite-heart {
+    color: red;
     font-size: 3em;
 }
 
