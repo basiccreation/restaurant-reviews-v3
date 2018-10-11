@@ -203,7 +203,11 @@ nav h1 a:focus {
 }
 
 
-
+.filter {
+    display:inline-block;
+    width: 1.5em;
+    transform: translateY(50%);
+}
 
 /*  Restaurant Filter */
 
@@ -234,6 +238,8 @@ nav h1 a:focus {
 .filter-options {
     color: #fff;
     font-size: 0.8em;
+      display:inline-block;
+
     position: relative;
     top: 45%;
     transform: translateY(-50%);
@@ -324,7 +330,7 @@ nav h1 a:focus {
 }
 
 .favorite-heart {
-    color: red;
+    color: #8A4700;
     font-size: 3em;
 }
 
@@ -773,6 +779,8 @@ input:focus:invalid {
 
     .filter-options {
         font-size: 1.25em;
+          display:inline-block;
+
         position: relative;
         top: 50%;
         transform: translateY(-50%);
