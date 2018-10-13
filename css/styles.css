@@ -151,7 +151,10 @@ nav h1 a:focus {
 }
 
 
-
+.favoriteIcon {
+    margin: 1em;
+    margin-bottom: 0em;
+}
 
 /* Display list items side by side */
 
@@ -329,10 +332,12 @@ nav h1 a:focus {
     color: #fff;
 }
 
-.favorite-heart {
+.favorite-heart, favoriteIcon {
     color: #8A4700;
     font-size: 3em;
 }
+
+
 
 #restaurants-list li a:focus {
     background-color: #333;

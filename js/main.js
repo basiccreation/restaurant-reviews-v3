@@ -173,6 +173,26 @@ createRestaurantHTML = (restaurant) => {
     div.className = "right-s col-xs-12 col-s-6 col-l-12";
     li.append(div);
 
+    //icons for like feature
+    const favoriteIcon = document.createElement("img");
+    favoriteIcon.className = "col-xs-1 col-s-1 col-m-1 col-l-1";
+
+    let currentfavorites = localStorage.getItem("favorites");
+    currentfavorites = currentfavorites ? JSON.parse(currentfavorites) : {};
+    const resID = "resID" + restaurant.id;
+
+    if (currentfavorites[resID] == restaurant.id) {
+        favoriteIcon.src = "img/heartsolid.svg";
+    } else {
+        favoriteIcon.src = "img/heart.svg";
+    }
+
+
+
+    div.append(favoriteIcon);
+
+
+
     const name = document.createElement("h2");
     name.tabIndex = 1;
     name.title = restaurant.name + " is " +
@@ -181,18 +201,6 @@ createRestaurantHTML = (restaurant) => {
     name.innerHTML = restaurant.name;
     div.append(name);
 
-    //icons for like feature
-    const favoriteIcon = document.createElement("aside");
-    if (restaurant.is_favorite == true) {
-        favoriteIcon.innerHTML = "<i class='fas fa-heart'></i>";
-       }
-    if (restaurant.is_favorite == false) {
-        favoriteIcon.innerHTML = "<i class='far fa-heart'></i>";
-        }
-
-
-
-    name.append(favoriteIcon);
 
     /*cuisine only shows if selection is all*/
     const selectedCuisine = document.getElementById("cuisines-select").selectedIndex;

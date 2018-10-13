@@ -1,6 +1,8 @@
 /*jshint esversion: 6 */
 let restaurant;
 var map;
+let restaurantIDfromPage = getID('id', window.location);
+let favorites = {};
 
 /**
  * Initialize Google map, called from HTML.
@@ -30,7 +32,7 @@ fetchRestaurantFromURL = (callback) => {
         return;
     }
     const id = getParameterByName("id");
-    
+
     if (!id) { // no id found in URL
         error = "No restaurant id in URL";
         callback(error, null);
@@ -54,7 +56,17 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
     const name = document.getElementById("restaurant-name");
     name.innerHTML = restaurant.name;
 
-    const isFavorite = document.getElementById("heart");
+    const heart = document.getElementById("heart");
+
+    let currentfavorites = localStorage.getItem("favorites");
+    currentfavorites = currentfavorites ? JSON.parse(currentfavorites) : {};
+    const resID = "resID" + restaurantIDfromPage;
+
+    if (currentfavorites[resID] === restaurantIDfromPage) {
+        heart.src = "img/heartsolid.svg";
+    } else {
+        heart.src = "img/heart.svg";
+    }
 
     const address = document.getElementById("restaurant-address");
     address.innerHTML = restaurant.address;
@@ -107,35 +119,33 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
 };
 
 /**
-* load in reviews
-*/
-function getID( name,href )
-    {
-      name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
-      var regexS = "[\\?&]"+name+"=([^&#]*)";
-      var regex = new RegExp( regexS );
-      var results = regex.exec( href );
-      if( results == null )
+ * load in reviews
+ */
+function getID(name, href) {
+    name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+    var regexS = "[\\?&]" + name + "=([^&#]*)";
+    var regex = new RegExp(regexS);
+    var results = regex.exec(href);
+    if (results == null)
         return "";
-      else
+    else
         return decodeURIComponent(results[1].replace(/\+/g, " "));
-    }
+}
 
-   let restaurantIDfromPage = getID('id', window.location);
-   const reviewURL = "http://localhost:1337/reviews/?restaurant_id=" + restaurantIDfromPage;
-   let currentRestaurantName = (restaurant = self.restaurant) => {
-     console.log(restaurant.name);
-    };
+const reviewURL = "http://localhost:1337/reviews/?restaurant_id=" + restaurantIDfromPage;
+let currentRestaurantName = (restaurant = self.restaurant) => {
+    console.log(restaurant.name);
+};
 
-   fetch(reviewURL)
-   .then(function(response) { 
-        return response.json(); 
+fetch(reviewURL)
+    .then(function(response) {
+        return response.json();
     })
-   .then(function(json) {
-         return json;
-   })
-   .then(function(reviews) {
-    const container = document.getElementById("reviews-container");
+    .then(function(json) {
+        return json;
+    })
+    .then(function(reviews) {
+        const container = document.getElementById("reviews-container");
 
         if (!reviews) {
             const noReviews = document.createElement("p");
@@ -143,14 +153,14 @@ function getID( name,href )
             container.appendChild(noReviews);
             return;
         }
-    
-    const ul = document.getElementById("reviews-list");
-    reviews.forEach(review => {
-        ul.appendChild(createReviewHTML(review));
-    });
-    container.appendChild(ul);
 
-   });
+        const ul = document.getElementById("reviews-list");
+        reviews.forEach(review => {
+            ul.appendChild(createReviewHTML(review));
+        });
+        container.appendChild(ul);
+
+    });
 
 /**
  * Create review HTML and add it to the webpage.
@@ -209,26 +219,27 @@ getParameterByName = (name, url) => {
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 };
 
-/**
- * Toggle favorite heart.
- */
 
- //favoriteRestaurantChecked
- //favoriteRestaurantUnchecked
+// /**
+//  * Toggle favorite heart.
+//  */
+
 function toggleFavorite() {
-    const favorite = document.getElementById("heart"); 
+    var image = document.getElementById("heart");
+    var src = image.src;
+    if (src === "http://localhost:8000/img/heartsolid.svg") {
+        image.src = "img/heart.svg";
+        let currentfavorites = localStorage.getItem("favorites");
+        currentfavorites = JSON.parse(currentfavorites);
+        const resID = "resID" + restaurantIDfromPage;
+        delete currentfavorites[resID];
+        localStorage.setItem('favorites', JSON.stringify(currentfavorites));
 
-    if (is_favorite === false) {
-        favorite.classList.toggle("fas");
-        favorite.src = DBHelper.favoriteRestaurantChecked(restaurant);
+    } else if (src == "http://localhost:8000/img/heart.svg") {
+        image.src = "img/heartsolid.svg";
+        let currentfavorites = localStorage.getItem("favorites");
+        currentfavorites = currentfavorites ? JSON.parse(currentfavorites) : {};
+        currentfavorites["resID" + restaurantIDfromPage] = restaurantIDfromPage;
+        localStorage.setItem('favorites', JSON.stringify(currentfavorites));
     }
-    else if (is_favorite === true) {
-        favorite.classList.toggle("far");
-        favorite.src = DBHelper.favoriteRestaurantUnchecked(restaurant);
-    }
-    else {
-        colsole.log ("toggleFavorite not working as planned")
-    }
-
-
- }
+} //end toggleFavorite
