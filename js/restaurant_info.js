@@ -179,7 +179,26 @@ createReviewHTML = (review) => {
     div.appendChild(name);
 
     const rating = document.createElement("p");
-    rating.innerHTML = `Rating: ${review.rating}`;
+    const r = review.rating;
+
+    switch (r) {
+    case 1:
+        text = "Never going back.";
+        break;
+    case 2:
+        text = "Have had better.";
+        break;
+    case 3:
+        text = "On the fence.";
+        break;
+    case 4:
+        text = "Food was great, but ...";
+        break;
+    case 5:
+        text = "Loved it!";
+        break;
+    }
+    rating.innerHTML = text;
     rating.className = "review-rating";
     rating.tabIndex = 1;
     li.appendChild(rating);
