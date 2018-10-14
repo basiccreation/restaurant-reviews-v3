@@ -293,9 +293,3 @@ function getRatingOption (r) {
         };
         return (ratingOptions[r] || ratingOptions['default']);
     } //getRatingOption
-
-
-
-
-
-

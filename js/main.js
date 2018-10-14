@@ -175,7 +175,7 @@ createRestaurantHTML = (restaurant) => {
 
     //icons for like feature
     const favoriteIcon = document.createElement("img");
-    favoriteIcon.className = "col-xs-1 col-s-1 col-m-1 col-l-1";
+    favoriteIcon.className = "favorite-icon col-xs-1 col-s-1 col-m-1 col-l-1";
 
     let currentfavorites = localStorage.getItem("favorites");
     currentfavorites = currentfavorites ? JSON.parse(currentfavorites) : {};
