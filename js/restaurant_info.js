@@ -265,6 +265,7 @@ function toggleFavorite() {
 } //end toggleFavorite
 
 function addingNewReview() {
+
 (async () => {
   const rawResponse = await fetch('http://localhost:1337/reviews/', {
     method: 'POST',
@@ -272,18 +273,16 @@ function addingNewReview() {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
-restaurant_id: restaurantIDfromPage,
+    body: JSON.stringify({
+            restaurant_id: restaurantIDfromPage,
             name: document.getElementById('name').value,
             rating: document.getElementById('rating').value,
             comments: document.getElementById('comment').value
-          });
+          })
+    });
   const content = await rawResponse.json();
 
   console.log(content);
 })();
-
-
-
-
 
 }
