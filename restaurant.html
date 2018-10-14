@@ -74,7 +74,7 @@
         <!-- End restaurant-container -->
         <section class = "reviews col-s-5 left-s" id="review-form-container">
             <div class="right-s col-12-s container">
-                <form action="/url">
+                <form onsubmit = "addingNewReview()">
                     <row class = "dropdown col-m-11 col-xs-11">
                         <label class = "col-xs-12 col-m-11 did-you-like-it" for="rating">Did you already go?</label>
                         <select class = "col-xs-12 col-m-12 dropdown-content" id="rating" name="rating" required>
@@ -112,7 +112,7 @@
                         <input required minlength="2" maxlength="50" class = "col-xs-11 col-s-11 col-m-11" type="text" id="name" name="name" placeholder="Your name..">
                     </row>
                     <row>
-                        <input  class = "submit-button col-xs-11 col-s-11 col-m-11" type="submit" value="Submit your comment">
+                        <input class = "submit-button col-xs-11 col-s-11 col-m-11" type="submit" value="Submit your comment">
 
                     </row>
                 </form>

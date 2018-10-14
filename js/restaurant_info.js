@@ -198,6 +198,7 @@ createReviewHTML = (review) => {
         text = "Loved it!";
         break;
     }
+
     rating.innerHTML = text;
     rating.className = "review-rating";
     rating.tabIndex = 1;
@@ -239,9 +240,9 @@ getParameterByName = (name, url) => {
 };
 
 
-// /**
-//  * Toggle favorite heart.
-//  */
+/*
+*  * Toggle favorite heart.
+*/
 
 function toggleFavorite() {
     var image = document.getElementById("heart");
@@ -262,3 +263,27 @@ function toggleFavorite() {
         localStorage.setItem('favorites', JSON.stringify(currentfavorites));
     }
 } //end toggleFavorite
+
+function addingNewReview() {
+(async () => {
+  const rawResponse = await fetch('http://localhost:1337/reviews/', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+restaurant_id: restaurantIDfromPage,
+            name: document.getElementById('name').value,
+            rating: document.getElementById('rating').value,
+            comments: document.getElementById('comment').value
+          });
+  const content = await rawResponse.json();
+
+  console.log(content);
+})();
+
+
+
+
+
+}
