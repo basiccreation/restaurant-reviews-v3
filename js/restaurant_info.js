@@ -181,26 +181,26 @@ createReviewHTML = (review) => {
     const rating = document.createElement("p");
     let r = review.rating;
     switch (r) {
-    case "1":
-        text = "Never going back.";
-        break;
-    case "2":
-        text = "Have had better.";
-        break;
-    case "3":
-        text = "On the fence.";
-        break;
-    case "4":
-        text = "Food was great, but ...";
-        break;
-    case "5":
-        text = "Loved it!";
-        break;
-    default:
-        text = "One person's opinon";
+        case "1":
+            text = "Never going back. ";
+            break;
+        case "2":
+            text = "Have had better. ";
+            break;
+        case "3":
+            text = "On the fence. ";
+            break;
+        case "4":
+            text = "Food was great, but ... ";
+            break;
+        case "5":
+            text = "Loved it! ";
+            break;
+        default:
+            text = "One person's opinon. ";
     }
 
-    rating.innerHTML = text;
+    rating.innerHTML = text + review.rating;
     rating.className = "review-rating";
     rating.tabIndex = 1;
     li.appendChild(rating);
@@ -242,8 +242,8 @@ getParameterByName = (name, url) => {
 
 
 /*
-*  * Toggle favorite heart.
-*/
+ *  * Toggle favorite heart.
+ */
 
 function toggleFavorite() {
     var image = document.getElementById("heart");
@@ -265,25 +265,38 @@ function toggleFavorite() {
     }
 } //end toggleFavorite
 
-function addingNewReview() {
+/*
+ * Add new review form
+ */
 
-(async () => {
-  const rawResponse = await fetch('http://localhost:1337/reviews/', {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-            restaurant_id: restaurantIDfromPage,
-            name: document.getElementById('name').value,
-            rating: document.getElementById('rating').value,
-            comments: document.getElementById('comment').value
-          })
-    });
-  const content = await rawResponse.json();
+document.getElementById('add-review').addEventListener('submit', addNewReview);
+document.getElementById('add-review').addEventListener('submit', resetForm);
 
-  console.log(content);
-})();
-
+function resetForm() {
+    document.getElementById("add-review").reset();
 }
+
+function addNewReview(e) {
+    e.preventDefault();
+    let restaurant_id = restaurantIDfromPage;
+    let name = document.getElementById('name').value;
+    let rating = document.getElementById('rating').value;
+    let comment = document.getElementById('comment').value;
+
+    fetch('http://localhost:1337/reviews/', {
+            method: 'POST',
+            mode: 'cors',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                restaurant_id: restaurant_id,
+                name: name,
+                rating: rating,
+                comments: comment
+            })
+        })
+        .then((res) => res.json())
+        .then((data) => console.log(data))
+} // end addNewReview

@@ -598,6 +598,191 @@
         "createdAt": "2018-10-14T02:41:06.035Z",
         "updatedAt": "2018-10-14T02:41:06.035Z",
         "id": 43
+      },
+      {
+        "restaurant_id": "1",
+        "name": "Tammy",
+        "rating": "3",
+        "comments": "Came here with my fiancé who is Russian and he loved everything. The fried beef dumplings were tasty and the gulyash came with a carrot salad that was delicious. For me nothing was outstanding. The pelmeni were good but not amazing. They had some really good (and super spicy!) hot sauces. ",
+        "createdAt": "2018-10-14T03:45:15.340Z",
+        "updatedAt": "2018-10-14T03:45:15.340Z",
+        "id": 44
+      },
+      {
+        "restaurant_id": "1",
+        "name": "Trish",
+        "rating": "2",
+        "comments": "We tried the Borsch and the Lapsha as entrees and the chicken dumplings for appetizer.  I believe the entrees were ~$12 each. All were good!  The Lapsha homemade noodles are excellent- very chewy.  Light broth.  The beef in it wasn't great- really tough. That's pretty much all that was in the soup- a very simple \"beef noodle soup.\"  The Borsch was good- sweet, from the beets.  The chicken dumplings were good as well-I would have liked to try the entree where they are presented in a broth. ",
+        "createdAt": "2018-10-14T05:06:52.070Z",
+        "updatedAt": "2018-10-14T05:06:52.070Z",
+        "id": 45
+      },
+      {
+        "restaurant_id": "1",
+        "name": "Benny",
+        "rating": "5",
+        "comments": "Portions are pretty small here though. We weren't super full after dinner.",
+        "createdAt": "2018-10-14T05:19:28.986Z",
+        "updatedAt": "2018-10-14T05:19:28.986Z",
+        "id": 46
+      },
+      {
+        "restaurant_id": "1",
+        "name": "Claudia",
+        "rating": "1",
+        "comments": "\nI have no idea how I had never eaten here until a few weeks ago. It's a pretty good dinner when I don't feel like cooking but want some veggies with a little protein. The only thing I'm bummed about right now is the consistency in what is served. The first couple of times I picked up dinner, the box was loaded with veggies, including lots of broccoli and large pieces of cabbage with other veggies to supplement. But the last two times I picked up, the box has been about 85 percent rice and the veggie medley is mostly green onions and celery with a few pieces of cabbage and 2 or 3 small pieces of broccoli. I don't really want to pay for mostly streamed rice. (I picked up around 5:30 tonight. It wasn't busy and it wasn't late so should have been plenty of real veggies in the kitchen.)",
+        "createdAt": "2018-10-14T05:28:34.691Z",
+        "updatedAt": "2018-10-14T05:28:34.691Z",
+        "id": 47
+      },
+      {
+        "restaurant_id": "1",
+        "name": "Paula",
+        "rating": "4",
+        "comments": "I ordered their Goddess of Springtime Salad topped with King Salmon Teriyaki, and a side of avocado. It was delicious. The salad came with organic baby spinach, red leaf lettuce, marinated orgainic carrots and daikon  - and was tossed in a creamy Tahini lime dressing. The dressing was fantastic and decadent. It paired well with the sweetly glazed salmon. The teriyaki sauce was a little heavy for my liking - but I sopped some of it up with a napkin and I liked that they use gluten-free tamari - rather than regular soy sauce to prepare it.",
+        "createdAt": "2018-10-14T05:36:00.725Z",
+        "updatedAt": "2018-10-14T05:36:00.725Z",
+        "id": 48
+      },
+      {
+        "restaurant_id": "1",
+        "name": "Paula",
+        "rating": "4",
+        "comments": "I ordered their Goddess of Springtime Salad topped with King Salmon Teriyaki, and a side of avocado. It was delicious. The salad came with organic baby spinach, red leaf lettuce, marinated orgainic carrots and daikon  - and was tossed in a creamy Tahini lime dressing. The dressing was fantastic and decadent. It paired well with the sweetly glazed salmon. The teriyaki sauce was a little heavy for my liking - but I sopped some of it up with a napkin and I liked that they use gluten-free tamari - rather than regular soy sauce to prepare it.",
+        "createdAt": "2018-10-14T05:57:55.205Z",
+        "updatedAt": "2018-10-14T05:57:55.205Z",
+        "id": 49
+      },
+      {
+        "createdAt": "2018-10-14T06:08:59.964Z",
+        "updatedAt": "2018-10-14T06:08:59.964Z",
+        "id": 50
+      },
+      {
+        "restaurant_id": "5",
+        "name": "Benedict",
+        "rating": "5",
+        "comments": "Love it, love it, love it!",
+        "createdAt": "2018-10-14T06:14:18.011Z",
+        "updatedAt": "2018-10-14T06:14:18.011Z",
+        "id": 51
+      },
+      {
+        "restaurant_id": "5",
+        "name": "Benjamin",
+        "rating": "2",
+        "comments": "If you're not getting a slice of fresh pizza, you're not going to be enjoying it.  Had 2 slices of warmed up combo and of slice of fresh out the oven pesto? , And the pesto was leaps and bounds better.  Overall, it's eh.  ",
+        "createdAt": "2018-10-14T17:28:02.215Z",
+        "updatedAt": "2018-10-14T17:28:02.215Z",
+        "id": 52
+      },
+      {
+        "restaurant_id": "5",
+        "name": "Bill",
+        "rating": "1",
+        "comments": "Really rude offensive and bordering abusive to customers who are trying to use the laundromat and hoping to also eat pizza while waiting for clothes never got a chance to even explain before the manager came lunging at me in the parking lot as I was trying to unload my 2 bags of laundry with a broken hand and was told I could not park on the lot even though it was empty and very hot and I was in front of the laundry wall in the shade with my dogs and I was hungry hot and offended and the rudeness . if you are traveling don't eat their or do laundry at the adjoining laundromat you'll be at risk of being assaulted by the laundry manager and the police called on you by the pizza place if you don't fit the college student appearance they require to do business with them besides the food is lousy overpriced the atmosphere is depressing and staff is hostile unless you are a student. . its a carry put business who will lie and tell you they have a banquet dinner to refuse service to travelers who come here to see natural bridges and he boardwalk .GO TO PIZZA MY HEART FOR A REAL LOCAL EXPERIENCE YOU WONT REGRET THIS PLACE IS A DEFINATE NO",
+        "createdAt": "2018-10-14T17:42:57.381Z",
+        "updatedAt": "2018-10-14T17:42:57.381Z",
+        "id": 53
+      },
+      {
+        "restaurant_id": "5",
+        "name": "Josh",
+        "rating": "5",
+        "comments": "The original upper crust. This pizza is delicious by the slice or a full pan. The owners are gracious and generous \nPesto pizza delectable",
+        "createdAt": "2018-10-14T17:45:39.542Z",
+        "updatedAt": "2018-10-14T17:45:39.542Z",
+        "id": 54
+      },
+      {
+        "restaurant_id": "5",
+        "name": "Micka",
+        "rating": "4",
+        "comments": "I grew up with this pizza (it's down the street from the house I lived in as a kid), so maybe I'm biased. Still, I make a point to stop by sometimes when I'm back home visiting, and the pizza still seems just as good as I remembered. This is one of a handful of restaurants I really miss living hundreds of miles away from. \n\nThe pizza might be expensive normally, but their *lunch specials* are an excellent deal (two slices of pizza and a soda for 5-6 bucks). Or at least they were last time I dropped by, which was sadly a while ago at this point; I should fix that sometime. (They've been running the same lunch special since I was a kid, though, so I doubt they've canned it.)",
+        "createdAt": "2018-10-14T17:49:23.944Z",
+        "updatedAt": "2018-10-14T17:49:23.944Z",
+        "id": 55
+      },
+      {
+        "restaurant_id": "6",
+        "name": "Steven",
+        "rating": "5",
+        "comments": "\nWhat a gem inside the shopping center behind the Capitola Mall. Always on the lookout for good Southern food (rare in the Santa Cruz area), we decided to try this southern Creole place.\nWe got there right when it opened (11:00), and each of us grabbed the lunch special, which was $10.95 and included any Po Boy sandwich with either Cajun fries or a small stew and a drink. I opted for the fried chicken Po boy, which came with fried chicken, spicy mayo, coleslaw, pickles, and tomato, with a side of Cajun fries. My wife tried the roast beef po boy with a side of red beans and rice stew, and we also ordered a side of fried pickles. ",
+        "createdAt": "2018-10-14T18:00:12.711Z",
+        "updatedAt": "2018-10-14T18:00:12.711Z",
+        "id": 56
+      },
+      {
+        "restaurant_id": "6",
+        "name": "Speve",
+        "rating": "5",
+        "comments": "Not only was this food amazing, it was served quick, fresh, and the counter order staff was helpful and brought it out to us in about 10 minutes. Both sandwiches were awesome. The fried chicken was light and airy (not true southern style, more Cajun) and the fries were seasoned with just the right amount of spice. The veggies were fresh and had a good crunch, and complimented the chicken very well. The beef sandwich was more like chopped beef with a tangy gravy sauce and spicy mayo, and the stew was awesome and tasted homemade. The fried pickles were perfectly done, and came with a mustard sauce (think Popeyes Mardi Gras mustard, but better), which went perfectly. Came with a ton of pickles for $3.50!",
+        "createdAt": "2018-10-14T18:02:10.891Z",
+        "updatedAt": "2018-10-14T18:02:10.891Z",
+        "id": 57
+      },
+      {
+        "restaurant_id": "6",
+        "name": "Fred",
+        "rating": "4",
+        "comments": "Everything was flavorful and full of spice. The side sauces was amazing. I only wished they had a customer bathroom. We had to walk our kids to bed bath and beyond. Other that FOOD was on point.",
+        "createdAt": "2018-10-14T18:04:28.340Z",
+        "updatedAt": "2018-10-14T18:04:28.340Z",
+        "id": 58
+      },
+      {
+        "restaurant_id": "6",
+        "name": "Alex",
+        "rating": "4",
+        "comments": "\nCame in here yesterday and man is this place great. \nI had the half gumbo/half spicy shrimp and it was really good! My gf got the catfish po-boy and she enjoyed it. The fish was seasoned and breaded really well and tasty. \nIt has a great NOLA vibe and after I came in(6:30pm) the restaurant became full. \nI'll definitely be back.",
+        "createdAt": "2018-10-14T18:19:11.777Z",
+        "updatedAt": "2018-10-14T18:19:11.777Z",
+        "id": 59
+      },
+      {
+        "restaurant_id": "6",
+        "name": "Diana",
+        "rating": "5",
+        "comments": "Our favorite place to eat in Capitola. You order at the counter and the menu is simple. But the quality of the food are very good, though I'm no expert on Cajun food. We enjoyed pretty much all of the stews and would highly recommend the place.",
+        "createdAt": "2018-10-14T18:21:08.514Z",
+        "updatedAt": "2018-10-14T18:21:08.514Z",
+        "id": 60
+      },
+      {
+        "restaurant_id": "6",
+        "name": "Michelle",
+        "rating": "4",
+        "comments": "This place is so yummy. I got the jambalaya and it was delicious! I would definitely come visit more often if I lived in the area. It was such a great comfort food item. I wish they had different types of drinks though. I was looking forward to having a mint julep but I didn't see any.",
+        "createdAt": "2018-10-14T18:23:19.707Z",
+        "updatedAt": "2018-10-14T18:23:19.707Z",
+        "id": 61
+      },
+      {
+        "restaurant_id": "6",
+        "name": "Michelle",
+        "rating": "4",
+        "comments": "This place is so yummy. I got the jambalaya and it was delicious! I would definitely come visit more often if I lived in the area. It was such a great comfort food item. I wish they had different types of drinks though. I was looking forward to having a mint julep but I didn't see any.",
+        "createdAt": "2018-10-14T18:23:28.470Z",
+        "updatedAt": "2018-10-14T18:23:28.470Z",
+        "id": 62
+      },
+      {
+        "restaurant_id": "6",
+        "name": "Susan",
+        "rating": "5",
+        "comments": "Beignets were amazing, as was the rum sauce. Meat based stews were tasty but the vegetarian ones were CRAZY good. Staff is super friendly. I felt it was priced relatively inexpensively.",
+        "createdAt": "2018-10-14T18:27:32.943Z",
+        "updatedAt": "2018-10-14T18:27:32.943Z",
+        "id": 63
+      },
+      {
+        "restaurant_id": "6",
+        "name": "Nir",
+        "rating": "3",
+        "comments": "Fast and friendly service, good food and authentic flavors. Great value for money. Stopped there with the family for a quick lunch on the road, everybody enjoyed it. Definitely worth the stop.",
+        "createdAt": "2018-10-14T18:45:25.503Z",
+        "updatedAt": "2018-10-14T18:45:25.503Z",
+        "id": 64
       }
     ]
   },
@@ -653,7 +838,7 @@
       "id": 10
     },
     "reviews": {
-      "id": 43
+      "id": 64
     }
   }
 }
