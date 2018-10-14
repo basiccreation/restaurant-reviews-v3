@@ -558,6 +558,46 @@
         "createdAt": "2018-10-14T01:30:19.833Z",
         "updatedAt": "2018-10-14T01:30:19.833Z",
         "id": 38
+      },
+      {
+        "restaurant_id": "1",
+        "name": "Jessie",
+        "rating": "4",
+        "comments": "This is hands down my favorite Chinese restaurant in the SC area. They are SO sweet, Sophia always serves you, and she is the kindest lady and we love seeing her. It is very homestyle and personal, with a quaint feel and though it looks like it needs a little TLC as far as the interior/exterior go, (though that's part of their charm for sure) their food can't be beat. Especially in conjunction with the service.",
+        "createdAt": "2018-10-14T01:39:29.992Z",
+        "updatedAt": "2018-10-14T01:39:29.992Z",
+        "id": 39
+      },
+      {
+        "restaurant_id": "1",
+        "name": "Gigi",
+        "rating": "2",
+        "comments": "Very affordable and tasty Chinese food in the Santa Cruz area. The best thing on the menu was the dumplings with hot sauce appetizer (Sichuan style with chili oil, garlic, and green onion). I also enjoyed the Fried Rice Noodles (Singapore style) which came with chicken, pork, egg, AND shrimp! Our waitress was very attentive and genuinely interested in our opinion of the food, which was super sweet. Oh, and their hot oolong tea is only $0.75!",
+        "createdAt": "2018-10-14T01:41:35.582Z",
+        "updatedAt": "2018-10-14T01:41:35.582Z",
+        "id": 40
+      },
+      {
+        "restaurant_id": "3",
+        "name": "Barb",
+        "rating": "1",
+        "comments": "Just when I thought that finding decent Chinese food in this town was hopeless, I found this gem. I felt like I hit the jackpot with their big portions, low price, and incredibly flavorful food. The friendly service is just a bonus. The only complaint I have is that they don't have crispy noodles for the chow mein, but it's not a deal breaker.I come here at least one a week. My favorite is Combo C: beef and broccoli, rice, sweet and sour pork, and fried prawn. It's so delicious!",
+        "createdAt": "2018-10-14T01:49:14.690Z",
+        "updatedAt": "2018-10-14T01:49:14.690Z",
+        "id": 41
+      },
+      {
+        "restaurant_id": "3",
+        "name": "Tim",
+        "comments": "I consider myself a foodie and home chef of sorts. I also enjoy dining out in a regular basis.\nOver many years I have tried a good number of Chinese restaurants!!\nThis restaurant will not disappoint!\nThe menu was extensive and the service was excellent. Each dish stands on its own merit and flavors were each distinct as they \nShould be.  This restaurant is my new favorite. If you like food and you require quality, try them out !!",
+        "createdAt": "2018-10-14T02:34:18.889Z",
+        "updatedAt": "2018-10-14T02:34:18.889Z",
+        "id": 42
+      },
+      {
+        "createdAt": "2018-10-14T02:41:06.035Z",
+        "updatedAt": "2018-10-14T02:41:06.035Z",
+        "id": 43
       }
     ]
   },
@@ -613,7 +653,7 @@
       "id": 10
     },
     "reviews": {
-      "id": 38
+      "id": 43
     }
   }
 }
