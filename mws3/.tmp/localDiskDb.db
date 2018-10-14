@@ -783,6 +783,24 @@
         "createdAt": "2018-10-14T18:45:25.503Z",
         "updatedAt": "2018-10-14T18:45:25.503Z",
         "id": 64
+      },
+      {
+        "restaurant_id": "4",
+        "name": "Amy",
+        "rating": "2",
+        "comments": "I was not impressed at all. Based off the overall good rating, we decided to come here for lunch after my sis's campus tour. When we were there, there was an already disgruntled dude obviously mad about the long wait. \n\nVery true; the wait was long. They called our number when it wasn't ready. So that was a letdown. Sandwiches was bland. All the people that ordered after us got theirs. So that's unfair.",
+        "createdAt": "2018-10-14T18:58:25.026Z",
+        "updatedAt": "2018-10-14T18:58:25.026Z",
+        "id": 65
+      },
+      {
+        "restaurant_id": "4",
+        "name": "Tintin",
+        "rating": "5",
+        "comments": "I was not impressed at all. Based off the overall good rating, we decided to come here for lunch after my sis's campus tour. When we were there, there was an already disgruntled dude obviously mad about the long wait. \n\nVery true; the wait was long. They called our number when it wasn't ready. So that was a letdown. Sandwiches was bland. All the people that ordered after us got theirs. So that's unfair.",
+        "createdAt": "2018-10-14T18:59:06.674Z",
+        "updatedAt": "2018-10-14T18:59:06.674Z",
+        "id": 66
       }
     ]
   },
@@ -838,7 +856,7 @@
       "id": 10
     },
     "reviews": {
-      "id": 64
+      "id": 66
     }
   }
 }

@@ -180,27 +180,7 @@ createReviewHTML = (review) => {
 
     const rating = document.createElement("p");
     let r = review.rating;
-    switch (r) {
-        case "1":
-            text = "Never going back. ";
-            break;
-        case "2":
-            text = "Have had better. ";
-            break;
-        case "3":
-            text = "On the fence. ";
-            break;
-        case "4":
-            text = "Food was great, but ... ";
-            break;
-        case "5":
-            text = "Loved it! ";
-            break;
-        default:
-            text = "One person's opinon. ";
-    }
-
-    rating.innerHTML = text + review.rating;
+    rating.innerHTML = getRatingOption (r);// + review.rating;
     rating.className = "review-rating";
     rating.tabIndex = 1;
     li.appendChild(rating);
@@ -300,3 +280,22 @@ function addNewReview(e) {
         .then((res) => res.json())
         .then((data) => console.log(data))
 } // end addNewReview
+
+
+function getRatingOption (r) {
+        const ratingOptions = {
+             "1" : "Never going back. ",
+             "2" : "Have had better. ",
+             "3" : "On the fence. ",
+             "4" : "Food was great, but ... ",
+             "5" : "Loved it! ",
+             default: "One person's opinon. "
+        };
+        return (ratingOptions[r] || ratingOptions['default']);
+    } //getRatingOption
+
+
+
+
+
+
