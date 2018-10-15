@@ -801,6 +801,177 @@
         "createdAt": "2018-10-14T18:59:06.674Z",
         "updatedAt": "2018-10-14T18:59:06.674Z",
         "id": 66
+      },
+      {
+        "restaurant_id": "9",
+        "name": "OP",
+        "rating": "5",
+        "comments": "Speediness isn't their thing. So, go in, place your order, pay for your sandwiches, and have a seat with a friend at one of their outside tables. If you wanna sip on something while you wait, you can grab a drink from inside or go next door to Verve or Lulu Carpenters for some coffee",
+        "createdAt": "2018-10-14T21:04:05.630Z",
+        "updatedAt": "2018-10-14T21:04:05.630Z",
+        "id": 67
+      },
+      {
+        "restaurant_id": "9",
+        "name": "Vicky",
+        "rating": "5",
+        "comments": "My favorite sandwich from here is the chicken pesto. They give you a pretty big sandwich that you can probably share with someone if you aren't too hungry. I love the bell peppers that they add to the sandwich and usually ask for my chicken to be grilled. There's also a menu for vegetarians for all of you who don't want to get meat in your sandwich. Definitely would recommend this place to anyone looking for a quick meal",
+        "createdAt": "2018-10-14T22:34:08.965Z",
+        "updatedAt": "2018-10-14T22:34:08.965Z",
+        "id": 68
+      },
+      {
+        "restaurant_id": "9",
+        "name": "Lauren",
+        "rating": "4",
+        "comments": "Great food! Do yourself a solid and go here \nThey have wine and teas. Perfect Sandwich stop for a wonderful lunch ",
+        "createdAt": "2018-10-14T22:54:59.803Z",
+        "updatedAt": "2018-10-14T22:54:59.803Z",
+        "id": 69
+      },
+      {
+        "restaurant_id": "9",
+        "name": "Lauren",
+        "rating": "4",
+        "comments": "Great food! Do yourself a solid and go here ↵They …eas. Perfect Sandwich stop for a wonderful lunch ",
+        "createdAt": "2018-10-14T22:58:33.130Z",
+        "updatedAt": "2018-10-14T22:58:33.130Z",
+        "id": 70
+      },
+      {
+        "restaurant_id": "9",
+        "name": "Dahlia",
+        "rating": "2",
+        "comments": "Delicious food. No question. But these guys are so chronically understaffed, you can expect a 15 minute wait to just have your order taken, and a 45 minute wait to get your food.",
+        "createdAt": "2018-10-14T22:59:52.509Z",
+        "updatedAt": "2018-10-14T22:59:52.509Z",
+        "id": 71
+      },
+      {
+        "restaurant_id": "9",
+        "name": "Savannah",
+        "rating": "2",
+        "comments": "The chicken shawarma was the best I have EVER had.  It was seasoned quite nicely.  The plain basmati rice had a hint of better, and even it was delicious. The shawarma platter includes the type of meat you choose plus fresh Tabbouleh and either a side of rice or hummus.",
+        "createdAt": "2018-10-14T23:03:58.105Z",
+        "updatedAt": "2018-10-14T23:03:58.105Z",
+        "id": 72
+      },
+      {
+        "restaurant_id": "8",
+        "name": "Tonya",
+        "rating": "4",
+        "comments": "The chicken shawarma was the best I have EVER had.  It was seasoned quite nicely.  The plain basmati rice had a hint of better, and even it was delicious. The shawarma platter includes the type of meat you choose plus fresh Tabbouleh and either a side of rice or hummus.",
+        "createdAt": "2018-10-14T23:06:06.088Z",
+        "updatedAt": "2018-10-14T23:06:06.088Z",
+        "id": 73
+      },
+      {
+        "restaurant_id": "8",
+        "name": "Cici",
+        "rating": "5",
+        "comments": "The food is really delicious, my family loved it! To start we got Chips and Guacamole which was really good. For entre, we got Mole and the Mexican city skirt steak. The beans are made for those who do not like them salty. Fortunately, they have salt on the table to add taste to it! It is pricey but buying organic food is expensive.\nOverall, service was really good and food was really delicious.\nWill definitely come back!",
+        "createdAt": "2018-10-14T23:07:44.892Z",
+        "updatedAt": "2018-10-14T23:07:44.892Z",
+        "id": 74
+      },
+      {
+        "restaurant_id": "8",
+        "name": "Mido",
+        "rating": "2",
+        "comments": "Terrible service.  Waiting waited and waited.  Had to ask for water. And then no ice\nWaiting for food now\nWell we finely got our food 1 hour+ later\nBUT the chicken tinga and entomatado was very good. Now for key lime pie",
+        "createdAt": "2018-10-14T23:13:09.825Z",
+        "updatedAt": "2018-10-14T23:13:09.825Z",
+        "id": 75
+      },
+      {
+        "restaurant_id": "8",
+        "name": "Isac",
+        "rating": "1",
+        "comments": "Closed Wednesdays.  Not according to door sign or Yelp.  Made reservation via Yelp and showed up to locked doors.  My date was not impressed, damn.",
+        "createdAt": "2018-10-14T23:14:52.156Z",
+        "updatedAt": "2018-10-14T23:14:52.156Z",
+        "id": 76
+      },
+      {
+        "restaurant_id": "8",
+        "name": "Tina",
+        "rating": "4",
+        "comments": "Closed Wednesdays.  Not according to door sign or Yelp.  Made reservation via Yelp and showed up to locked doors.  My date was not impressed, damn.",
+        "createdAt": "2018-10-14T23:16:24.791Z",
+        "updatedAt": "2018-10-14T23:16:24.791Z",
+        "id": 77
+      },
+      {
+        "restaurant_id": "8",
+        "name": "James",
+        "rating": "4",
+        "comments": "When I try a new Mexican restaurant, I like to do a dish that I can equate to others.....mole, chili relleno, etc.  I opted for the Mole and my dining partners selected the Chicken Tinga and fish tacos.  We also got a carafe of Sangria.  All the plates were visually appealing when they arrived to our table.  Garnishes and added little touches on the plate did not go unnoticed.  Our Mexican restaurant in Scotts Valley will serve a pale beige burrito on a pale beige plate with not a sprig of parsley to be seen.  We eat with our eyes too!",
+        "createdAt": "2018-10-14T23:38:56.639Z",
+        "updatedAt": "2018-10-14T23:38:56.639Z",
+        "id": 78
+      },
+      {
+        "restaurant_id": "8",
+        "name": "Amy",
+        "rating": "4",
+        "comments": "Fresh and delicious!  Awesome to see that they can make anything on the menu vegan.  Tortilla soup is stellar!!  Not a single person in our party of 6 was dissatisfied.  Did not have any issues with service - even though the restaurant was fairly busy.  Will certainly be back soon.",
+        "createdAt": "2018-10-14T23:41:13.616Z",
+        "updatedAt": "2018-10-14T23:41:13.616Z",
+        "id": 79
+      },
+      {
+        "restaurant_id": "8",
+        "name": "Sienna",
+        "rating": "2",
+        "comments": "The mole was tasty, as was the trout. My dining companions thought the steak was overcooked  and tough.",
+        "createdAt": "2018-10-14T23:57:23.388Z",
+        "updatedAt": "2018-10-14T23:57:23.388Z",
+        "id": 80
+      },
+      {
+        "restaurant_id": "8",
+        "name": "JONAH",
+        "rating": "4",
+        "comments": "The mole will blow you mind. We also tried the enchiladas, which are not smothered with sauce but rather tortillas soaked in sauce and then plated with chicken, etc on top of them for a more subtle flavor mix. The flavors were a lot more nuanced (in a good way!) than we expected.\n\nIt was pricy, to be honest. We'll try lunch next and see if that's more affordable.",
+        "createdAt": "2018-10-15T00:00:05.000Z",
+        "updatedAt": "2018-10-15T00:00:05.000Z",
+        "id": 81
+      },
+      {
+        "restaurant_id": "8",
+        "name": "PETER",
+        "rating": "5",
+        "comments": "\nSuch a great restaurant and much needed in the not diverse enough Santa Cruz food scene. Soups were excellent as well as the house rice and beans. Had the special tostada and entomatado which had the most unbelievable verde sauce I've had in my life. It's indescribable. Wish we could have ordered the mole and the aldonbigas which are meatballs in a chipotle tomato sauce. Wait staff is amazing both knowledgeable and very sweet. She offered to bring us sauces to try before ordering. Great decor and music as well. We will be back for sure.",
+        "createdAt": "2018-10-15T00:01:10.558Z",
+        "updatedAt": "2018-10-15T00:01:10.558Z",
+        "id": 82
+      },
+      {
+        "restaurant_id": "10",
+        "name": "Denny",
+        "rating": "5",
+        "comments": "\nSuch a great restaurant and much needed in the not diverse enough Santa Cruz food scene. Soups were excellent as well as the house rice and beans. Had the special tostada and entomatado which had the most unbelievable verde sauce I've had in my life. It's indescribable. Wish we could have ordered the mole and the aldonbigas which are meatballs in a chipotle tomato sauce. Wait staff is amazing both knowledgeable and very sweet. She offered to bring us sauces to try before ordering. Great decor and music as well. We will be back for sure.",
+        "createdAt": "2018-10-15T00:04:48.274Z",
+        "updatedAt": "2018-10-15T00:04:48.274Z",
+        "id": 83
+      },
+      {
+        "restaurant_id": "10",
+        "name": "Eric",
+        "rating": "4",
+        "comments": "\nSuch a great restaurant and much needed in the not diverse enough Santa Cruz food scene. Soups were excellent as well as the house rice and beans. Had the special tostada and entomatado which had the most unbelievable verde sauce I've had in my life. It's indescribable. Wish we could have ordered the mole and the aldonbigas which are meatballs in a chipotle tomato sauce. Wait staff i.",
+        "createdAt": "2018-10-15T00:05:42.617Z",
+        "updatedAt": "2018-10-15T00:05:42.617Z",
+        "id": 84
+      },
+      {
+        "restaurant_id": "10",
+        "name": "Jose",
+        "rating": "5",
+        "comments": "Amazing fish tacos, mole, Frida Kahlo soup and guacamole.  Dessert was great-the best flan I have ever had.  Service was fantastic and great.  Our new favorite Mexican restaurant in the county.  The mole equals that I have had in Oaxaca.  Just amazing.",
+        "createdAt": "2018-10-15T00:08:52.607Z",
+        "updatedAt": "2018-10-15T00:08:52.607Z",
+        "id": 85
       }
     ]
   },
@@ -856,7 +1027,7 @@
       "id": 10
     },
     "reviews": {
-      "id": 66
+      "id": 85
     }
   }
 }

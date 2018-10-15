@@ -3,6 +3,7 @@ let restaurant;
 var map;
 let restaurantIDfromPage = getID('id', window.location);
 let favorites = {};
+let offlineReviews = {};
 
 /**
  * Initialize Google map, called from HTML.
@@ -180,7 +181,7 @@ createReviewHTML = (review) => {
 
     const rating = document.createElement("p");
     let r = review.rating;
-    rating.innerHTML = getRatingOption (r);// + review.rating;
+    rating.innerHTML = getRatingOption (r) + review.rating;
     rating.className = "review-rating";
     rating.tabIndex = 1;
     li.appendChild(rating);
@@ -252,6 +253,7 @@ function toggleFavorite() {
 document.getElementById('add-review').addEventListener('submit', addNewReview);
 document.getElementById('add-review').addEventListener('submit', resetForm);
 
+
 function resetForm() {
     document.getElementById("add-review").reset();
 }
@@ -262,6 +264,7 @@ function addNewReview(e) {
     let name = document.getElementById('name').value;
     let rating = document.getElementById('rating').value;
     let comment = document.getElementById('comment').value;
+    
 
     fetch('http://localhost:1337/reviews/', {
             method: 'POST',
@@ -278,7 +281,29 @@ function addNewReview(e) {
             })
         })
         .then((res) => res.json())
-        .then((data) => console.log(data))
+        //.then((data) => console.log(data))
+        .then(function(data) {
+            console.log(data);
+
+            // Get the existing data
+            var existing = localStorage.getItem('offlineReviews');
+
+            // If no existing data, create an array
+            // Otherwise, convert the localStorage string to an array
+            existing = existing ? JSON.parse(existing) : {};
+
+            let reviewID = data.id;
+ 
+            console.log(reviewID);
+
+
+            // Add new data to localStorage Array
+            existing[reviewID] = data;
+
+            // Save back to localStorage
+            localStorage.setItem('offlineReviews', JSON.stringify(existing));
+
+        }) //end then
 } // end addNewReview
 
 
@@ -293,3 +318,4 @@ function getRatingOption (r) {
         };
         return (ratingOptions[r] || ratingOptions['default']);
     } //getRatingOption
+
