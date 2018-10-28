@@ -22,7 +22,7 @@ window.initMap = () => {
             DBHelper.mapMarkerForRestaurant(self.restaurant, self.map);
         }
     });
-};
+}; // end initMap
 
 /**
  * Get current restaurant from page URL.
@@ -48,7 +48,7 @@ fetchRestaurantFromURL = (callback) => {
             callback(null, restaurant);
         });
     }
-};
+}; // end fetchRestaurantFromURL
 
 /**
  * Create restaurant HTML and add it to the webpage
@@ -97,7 +97,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
     if (restaurant.operating_hours) {
         fillRestaurantHoursHTML();
     }
-};
+}; // end fillRestaurantHTML
 
 /**
  * Create restaurant operating hours HTML table and add it to the webpage.
@@ -119,9 +119,9 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
     }
 };
 
-/**
- * load in reviews
- */
+// /**
+//  * load in reviews
+//  */
 function getID(name, href) {
     name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
     var regexS = "[\\?&]" + name + "=([^&#]*)";
@@ -133,67 +133,67 @@ function getID(name, href) {
         return decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
-const reviewURL = "http://localhost:1337/reviews/?restaurant_id=" + restaurantIDfromPage;
-let currentRestaurantName = (restaurant = self.restaurant) => {
-    console.log(restaurant.name);
-};
+// const reviewURL = "http://localhost:1337/reviews/?restaurant_id=" + restaurantIDfromPage;
+// let currentRestaurantName = (restaurant = self.restaurant) => {
+//     console.log(restaurant.name);
+// };
 
-fetch(reviewURL)
-    .then(function(response) {
-        return response.json();
-    })
-    .then(function(json) {
-        return json;
-    })
-    .then(function(reviews) {
-        const container = document.getElementById("reviews-container");
+// fetch(reviewURL)
+//     .then(function(response) {
+//         return response.json();
+//     })
+//     // .then(function(json) {
+//     //     return json;
+//     // })
+//     .then(function(reviews) {
+//         const container = document.getElementById("reviews-container");
 
-        if (!reviews) {
-            const noReviews = document.createElement("p");
-            noReviews.innerHTML = "No reviews yet!";
-            container.appendChild(noReviews);
-            return;
-        }
+//         if (!reviews) {
+//             const noReviews = document.createElement("p");
+//             noReviews.innerHTML = "No reviews yet!";
+//             container.appendChild(noReviews);
+//             return;
+//         }
 
-        const ul = document.getElementById("reviews-list");
-        reviews.forEach(review => {
-            ul.appendChild(createReviewHTML(review));
-        });
-        container.appendChild(ul);
+//         const ul = document.getElementById("reviews-list");
+//         reviews.forEach(review => {
+//             ul.appendChild(createReviewHTML(review));
+//         });
+//         container.appendChild(ul);
 
-    });
+//     });
 
-/**
- * Create review HTML and add it to the webpage.
- */
-createReviewHTML = (review) => {
-    const li = document.createElement("li");
-    li.className = "col-l-3 left-m left-s"
+// /**
+//  * Create review HTML and add it to the webpage.
+//  */
+// createReviewHTML = (review) => {
+//     const li = document.createElement("li");
+//     li.className = "col-l-3 left-m left-s"
 
-    const div = document.createElement("div");
-    li.appendChild(div);
+//     const div = document.createElement("div");
+//     li.appendChild(div);
 
-    const name = document.createElement("p");
-    name.innerHTML = review.name;
-    name.className = "review-name";
-    name.tabIndex = 1;
-    div.appendChild(name);
+//     const name = document.createElement("p");
+//     name.innerHTML = review.name;
+//     name.className = "review-name";
+//     name.tabIndex = 1;
+//     div.appendChild(name);
 
-    const rating = document.createElement("p");
-    let r = review.rating;
-    rating.innerHTML = getRatingOption (r) + review.rating;
-    rating.className = "review-rating";
-    rating.tabIndex = 1;
-    li.appendChild(rating);
+//     const rating = document.createElement("p");
+//     let r = review.rating;
+//     rating.innerHTML = getRatingOption (r) + review.rating;
+//     rating.className = "review-rating";
+//     rating.tabIndex = 1;
+//     li.appendChild(rating);
 
-    const comments = document.createElement("p");
-    comments.innerHTML = review.comments;
-    comments.className = "review-comments";
-    comments.tabIndex = 1;
-    li.appendChild(comments);
+//     const comments = document.createElement("p");
+//     comments.innerHTML = review.comments;
+//     comments.className = "review-comments";
+//     comments.tabIndex = 1;
+//     li.appendChild(comments);
 
-    return li;
-};
+//     return li;
+// };
 
 /**
  * Add restaurant name to the breadcrumb navigation menu
@@ -228,94 +228,63 @@ getParameterByName = (name, url) => {
 
 function toggleFavorite() {
     var image = document.getElementById("heart");
+    let restaurant_id = restaurantIDfromPage;
     var src = image.src;
+    let currentTime = new Date().toISOString;
+    console.log(currentTime);
+    
     if (src === "http://localhost:8000/img/heartsolid.svg") {
         image.src = "img/heart.svg";
-        let currentfavorites = localStorage.getItem("favorites");
-        currentfavorites = JSON.parse(currentfavorites);
-        const resID = "resID" + restaurantIDfromPage;
-        delete currentfavorites[resID];
-        localStorage.setItem('favorites', JSON.stringify(currentfavorites));
 
-    } else if (src == "http://localhost:8000/img/heart.svg") {
-        image.src = "img/heartsolid.svg";
-        let currentfavorites = localStorage.getItem("favorites");
-        currentfavorites = currentfavorites ? JSON.parse(currentfavorites) : {};
-        currentfavorites["resID" + restaurantIDfromPage] = restaurantIDfromPage;
-        localStorage.setItem('favorites', JSON.stringify(currentfavorites));
-    }
-} //end toggleFavorite
-
-/*
- * Add new review form
- */
-
-document.getElementById('add-review').addEventListener('submit', addNewReview);
-document.getElementById('add-review').addEventListener('submit', resetForm);
-
-
-function resetForm() {
-    document.getElementById("add-review").reset();
-}
-
-function addNewReview(e) {
-    e.preventDefault();
-    let restaurant_id = restaurantIDfromPage;
-    let name = document.getElementById('name').value;
-    let rating = document.getElementById('rating').value;
-    let comment = document.getElementById('comment').value;
-    
-
-    fetch('http://localhost:1337/reviews/', {
-            method: 'POST',
+        fetch('http://localhost:1337/restaurants/'+ restaurant_id +'/?is_favorite=true', {
+            method: 'PUT',
             mode: 'cors',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                restaurant_id: restaurant_id,
-                name: name,
-                rating: rating,
-                comments: comment
+                is_favorite: false,
+                updatedAt: currentTime
             })
         })
-        .then((res) => res.json())
-        //.then((data) => console.log(data))
-        .then(function(data) {
-            console.log(data);
 
-            // Get the existing data
-            var existing = localStorage.getItem('offlineReviews');
+    } else if (src == "http://localhost:8000/img/heart.svg") {
+        image.src = "img/heartsolid.svg";
 
-            // If no existing data, create an array
-            // Otherwise, convert the localStorage string to an array
-            existing = existing ? JSON.parse(existing) : {};
-
-            let reviewID = data.id;
- 
-            console.log(reviewID);
-
-
-            // Add new data to localStorage Array
-            existing[reviewID] = data;
-
-            // Save back to localStorage
-            localStorage.setItem('offlineReviews', JSON.stringify(existing));
-
-        }) //end then
-} // end addNewReview
+        fetch('http://localhost:1337/restaurants/'+ restaurant_id +'/?is_favorite=false', {
+            method: 'PUT',
+            mode: 'cors',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                is_favorite: true,
+                updatedAt: currentTime
+            })
+        })
+    }
+} //end toggleFavorite
 
 
-function getRatingOption (r) {
-        const ratingOptions = {
-             "1" : "Never going back. ",
-             "2" : "Have had better. ",
-             "3" : "On the fence. ",
-             "4" : "Food was great, but ... ",
-             "5" : "Loved it! ",
-             default: "One person's opinon. "
-        };
-        return (ratingOptions[r] || ratingOptions['default']);
-    } //getRatingOption
+// function toggleFavorite() {
+//     var image = document.getElementById("heart");
+//     var src = image.src;
+//     if (src === "http://localhost:8000/img/heartsolid.svg") {
+//         image.src = "img/heart.svg";
+//         let currentfavorites = localStorage.getItem("favorites");
+//         currentfavorites = JSON.parse(currentfavorites);
+//         const resID = "resID" + restaurantIDfromPage;
+//         delete currentfavorites[resID];
+//         localStorage.setItem('favorites', JSON.stringify(currentfavorites));
+
+//     } else if (src == "http://localhost:8000/img/heart.svg") {
+//         image.src = "img/heartsolid.svg";
+//         let currentfavorites = localStorage.getItem("favorites");
+//         currentfavorites = currentfavorites ? JSON.parse(currentfavorites) : {};
+//         currentfavorites["resID" + restaurantIDfromPage] = restaurantIDfromPage;
+//         localStorage.setItem('favorites', JSON.stringify(currentfavorites));
+//     }
+// } //end toggleFavorite
 

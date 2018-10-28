@@ -188,9 +188,10 @@
           "Sunday": "10:00 am - 3:00 pm, 5:30 pm - 11:00 pm"
         },
         "createdAt": 1504095567091,
-        "updatedAt": 1504095567091,
-        "is_favorite": false,
-        "id": 8
+        "updatedAt": "2018-10-26T01:21:50.528Z",
+        "is_favorite": "false",
+        "id": 8,
+        "restaurant_id": "8"
       },
       {
         "name": "Mu Ramen",
@@ -972,6 +973,60 @@
         "createdAt": "2018-10-15T00:08:52.607Z",
         "updatedAt": "2018-10-15T00:08:52.607Z",
         "id": 85
+      },
+      {
+        "restaurant_id": "10",
+        "name": "Cleo",
+        "rating": "3",
+        "comments": "As most, we found this place by accident. It happens that our last name is Pierce, so, we had to stop! They had just turned the closed sign, but, Mike welcomed us in and stayed open until we were done. ",
+        "createdAt": "2018-10-15T05:23:55.424Z",
+        "updatedAt": "2018-10-15T05:23:55.424Z",
+        "id": 86
+      },
+      {
+        "restaurant_id": "10",
+        "name": "Zach",
+        "rating": "5",
+        "comments": "This has become the place that I go to when I want to feel at home and well cared for, and I haven't even mentioned the food.  The food is always great, with an ever changing list of new dishes to try on daily specials.   The consistency of their regular food items on the menu.  \nStill the best burger in town in my opinion. \nAn amazing place, so thank you for being top quality in every area Cafe Cruz! Cheers!",
+        "createdAt": "2018-10-16T03:31:12.755Z",
+        "updatedAt": "2018-10-16T03:31:12.755Z",
+        "id": 87
+      },
+      {
+        "restaurant_id": "10",
+        "name": "Thomas",
+        "rating": "5",
+        "comments": "This has become the place that I go to when I want to feel at home and well cared for, and I haven't even mentioned the food.  The food is always great, with an ever changing list of new dishes to try on daily specials.   The consistency of their regular food items on the menu.  \nStill the best burger in town in my opinion. \nAn amazing place, so thank you for being top quality in every area Cafe Cruz! Cheers!",
+        "createdAt": "2018-10-16T03:32:16.421Z",
+        "updatedAt": "2018-10-16T03:32:16.421Z",
+        "id": 88
+      },
+      {
+        "restaurant_id": "1",
+        "name": "Thumbilina",
+        "rating": "5",
+        "comments": "This has become the place that I go to when I want to feel at home and well cared for, and I haven't even mentioned the food.  The food is always great, with an ever changing list of new dishes to try on daily specials.   The consistency of their regular food items on the menu.  \nStill the best burger in town in my opinion. \nAn amazing place, so thank you for being top quality in every area Cafe Cruz! Cheers!",
+        "createdAt": "2018-10-22T00:35:20.152Z",
+        "updatedAt": "2018-10-22T00:35:20.152Z",
+        "id": 89
+      },
+      {
+        "restaurant_id": "1",
+        "name": "Ceasar",
+        "rating": "3",
+        "comments": "Oh and another thing - even though I'd made a reservation I was initially seated in the bar with TV's broadcasting football. I mean really? This was a hundred dollar meal for two. The only reason I'm giving two stars is because of the AMAZING hostess who reseated us outside with nothing but patience and understanding so my friend and I could hold an actual conversation. She was the only decent thing about the whole meal. I'll never go back.",
+        "createdAt": "2018-10-22T00:44:24.054Z",
+        "updatedAt": "2018-10-22T00:44:24.054Z",
+        "id": 90
+      },
+      {
+        "restaurant_id": "8",
+        "name": "Brutus",
+        "rating": "3",
+        "comments": "When we asked if she can take a picture of our table, she rolled her eyes. I didn't have the heart to take away her tip (looking back I probably should had), instead our business wont be coming back. HORRIBLE WAITRESS! Wish I would had gotten her name.",
+        "createdAt": "2018-10-22T00:46:22.103Z",
+        "updatedAt": "2018-10-22T00:46:22.103Z",
+        "id": 91
       }
     ]
   },
@@ -1027,7 +1082,7 @@
       "id": 10
     },
     "reviews": {
-      "id": 85
+      "id": 91
     }
   }
 }
