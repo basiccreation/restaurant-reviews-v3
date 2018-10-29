@@ -15,22 +15,31 @@
     return;
   }
 
- var dbPromise = idb.open('test-db2', 1, function(upgradeDb) {
-    console.log('making first object store');
-    if (!upgradeDb.objectStoreNames.contains('firstOS')) {
-      var firstOS = upgradeDb.createObjectStore('firstOS', {keypath:"restaurant_id", autoIncrement: true });
-      firstOS.createIndex('id', 'id', {unique: true});
-      firstOS.createIndex('cuisinetype', 'cuisine_type', {unique: false});
-    } // end if ... firstOS
-    console.log('making second object store');
-    if (!upgradeDb.objectStoreNames.contains('secondOS')) {
-      var secondOS = upgradeDb.createObjectStore('secondOS', {keypath:"restaurant_id", autoIncrement: true });
-      secondOS.createIndex('id', 'id', {unique: true});
-    } // end if ... secondOS
-    //     console.log('making third object store');
-    // if (!upgradeDb.objectStoreNames.contains('thirdOS')) {
-    //   var thirdOS = upgradeDb.createObjectStore('thirdOS', {keypath:"date", autoIncrement:true});
-    // } // end if ... thirdOS
+ var dbPromise = idb.open('restaurantReviewDatabase', 1, function(upgradeDb) {
+    console.log('making restaurantObjectStore');
+    if (!upgradeDb.objectStoreNames.contains('restaurantObjectStore')) {
+      var restaurantObjectStore = upgradeDb.createObjectStore('restaurantObjectStore', {keypath:"restaurant_id", autoIncrement: true });
+      restaurantObjectStore.createIndex('id', 'id', {unique: true});
+      restaurantObjectStore.createIndex('cuisinetype', 'cuisine_type', {unique: false});
+    } // end if ... restaurantObjectStore
+    
+    console.log('making reviewObjectStore');
+    if (!upgradeDb.objectStoreNames.contains('reviewObjectStore')) {
+      var reviewObjectStore = upgradeDb.createObjectStore('reviewObjectStore', {keypath:"id", autoIncrement: true });
+      reviewObjectStore.createIndex('reviewid', 'id', {unique: true});
+      reviewObjectStore.createIndex('restaurantid', 'restaurant_id', {unique: false});
+    } // end if ... reviewObjectStore
+    
+    console.log('making currentFavoriteObjectStore');
+    if (!upgradeDb.objectStoreNames.contains('currentFavoriteObjectStore')) {
+      var currentFavoriteObjectStore = upgradeDb.createObjectStore('currentFavoriteObjectStore', {keyPath: 'restaurant_id'});
+    } // end if ... currentFavoriteObjectStore
+    
+    console.log('making savedOfflineReviews');
+    if (!upgradeDb.objectStoreNames.contains("savedOfflineReviews")) {
+    var savedOfflineReviews = upgradeDb.createObjectStore('savedOnlineReviews', {keyPath: 'id', autoIncrement: true});
+    savedOfflineReviews.createIndex("restaurant_id", "restaurant_id")
+    }
 
   }); // end dbPromise
 
@@ -45,8 +54,8 @@
             .then(function(resturantsJSON) {
                 console.log(resturantsJSON)
 
-                var tx = db.transaction(['firstOS'], 'readwrite');
-                var store = tx.objectStore('firstOS');
+                var tx = db.transaction(['restaurantObjectStore'], 'readwrite');
+                var store = tx.objectStore('restaurantObjectStore');
                 for (var i = 0; i < resturantsJSON.length; i++) {
                  store.add(resturantsJSON[i]);
                 }
@@ -54,7 +63,7 @@
 
             })
             .catch(err => {
-                console.log("firstOS JSON err");
+                console.log("restaurantObjectStore JSON err");
             }); // end catch
 
         const ReviewJSONurl = "http://localhost:1337/reviews";
@@ -66,8 +75,8 @@
             .then(function(reviewJSON) {
                 console.log(reviewJSON)
 
-                var tx = db.transaction(['secondOS'], 'readwrite');
-                var store = tx.objectStore('secondOS');
+                var tx = db.transaction(['reviewObjectStore'], 'readwrite');
+                var store = tx.objectStore('reviewObjectStore');
                 for (var i = 0; i < reviewJSON.length; i++) {
                  store.add(reviewJSON[i]);
                 }
@@ -75,7 +84,7 @@
 
             })
             .catch(err => {
-                console.log("secondOS JSON err");
+                console.log("reviewObjectStore JSON err");
             }); // end catch
 
     }) // end dbPromise.then
