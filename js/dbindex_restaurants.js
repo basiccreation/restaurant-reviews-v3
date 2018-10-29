@@ -34,18 +34,20 @@ request.onupgradeneeded = function(e) {
     var db = e.target.result;
 
     //create object store for this database
-    var restaurantstore = db.createObjectStore("restaurants", 
+    var restaurantStore     = db.createObjectStore("restaurants", 
         { autoIncrement: true });
-    var favoritestore = db.createObjectStore("favoriteRestaurants", 
-        { autoIncrement: true });
-    var reviewstore = db.createObjectStore("restaurantReviews", 
+    var reviewStore         = db.createObjectStore("restaurantReviews", 
         { autoIncrement: true });
 
     //create index to look up restaurants by favorite
-    favoritestore.createIndex("is_favorite", "is_favorite", { unique: false });
- reviewstore.createIndex("restaurant_id", "restaurant_id", { unique: false });
+    // favoriteStore.createIndex("is_favorite", "is_favorite", 
+    //     { unique: false });
+    reviewStore.createIndex("restaurant_id", "restaurant_id", 
+        { unique: false });    
+    restaurantStore.createIndex("restaurant_id", "restaurant_id", 
+        { unique: false });
 
-    restaurantstore.transaction.oncomplete = function(e) {
+    restaurantStore.transaction.oncomplete = function(e) {
 
         const JSONurl = "http://localhost:1337/restaurants";
 
@@ -54,10 +56,10 @@ request.onupgradeneeded = function(e) {
                 return response.json();
             })
             .then(function(resturantsJSON) {
-                var transaction = db.transaction("restaurants", "readwrite");
+                //var transaction = db.transaction("restaurants", "readwrite");
                 var objstore = transaction.objectStore("restaurants");
                 for (var i = 0; i < resturantsJSON.length; i++) {
-                    objstore.add(resturantsJSON[i])
+                    restaurantStore.add(resturantsJSON[i])
                 }
             })
             .catch(err => {
@@ -65,9 +67,7 @@ request.onupgradeneeded = function(e) {
             }); // end fetch
     } // end restaurants objectstore
 
-
-
-    reviewstore.transaction.oncomplete = function(e) {
+    reviewStore.transaction.oncomplete = function(e) {
 
         const JSONurl = "http://localhost:1337/reviews";
 
@@ -76,38 +76,16 @@ request.onupgradeneeded = function(e) {
                 return response.json();
             })
             .then(function(resturantsJSON) {
-                var transaction = db.transaction("restaurantReviews", "readwrite");
+                // var transaction = db.transaction("restaurantReviews", "readwrite");
                 var objstore = transaction.objectStore("restaurantReviews");
                 for (var i = 0; i < resturantsJSON.length; i++) {
-                    objstore.add(resturantsJSON[i])
+                    reviewStore.add(resturantsJSON[i])
                 }
             })
             .catch(err => {
                 console.log("resturant JSON err");
             }); // end fetch
     }  // end restaurants reviewStore
-
-
-
-    // favoriteStore.transaction.oncomplete = function(e) {
-
-    //     const JSONurl = "http://localhost:1337/restaurants";
-
-    //     fetch(JSONurl)
-    //         .then(function(response) {
-    //             return response.json();
-    //         })
-    //         .then(function(resturantsJSON) {
-    //             var transaction = db.transaction("favoriteRestaurants", "readwrite");
-    //             var favoritestore = transaction.favoriteStore("favoriteRestaurants");
-    //             for (var i = 0; i < resturantsJSON.length; i++) {
-    //                 favoritestore.add(resturantsJSON[i])
-    //             }
-    //         })
-    //         .catch(err => {
-    //             console.log("favorite resturant JSON err");
-    //         }); // end fetch
-    // } // end restaurants favoriteStore
 
 
 } // onupgradeneeded
