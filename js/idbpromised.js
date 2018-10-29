@@ -57,22 +57,19 @@
                 console.log("firstOS JSON err");
             }); // end catch
 
+        const ReviewJSONurl = "http://localhost:1337/reviews";
 
-
-
-        const reviewJSONurl = "http://localhost:1337/reviews";
-
-        fetch(reviewJSONurl)
+        fetch(ReviewJSONurl)
             .then(function(response) {
                 return response.json();
             })
-            .then(function(resturantsJSON) {
-                console.log(resturantsJSON)
+            .then(function(reviewJSON) {
+                console.log(reviewJSON)
 
                 var tx = db.transaction(['secondOS'], 'readwrite');
                 var store = tx.objectStore('secondOS');
-                for (var i = 0; i < resturantsJSON.length; i++) {
-                 store.add(resturantsJSON[i]);
+                for (var i = 0; i < reviewJSON.length; i++) {
+                 store.add(reviewJSON[i]);
                 }
                 tx.complete;
 
@@ -81,9 +78,6 @@
                 console.log("secondOS JSON err");
             }); // end catch
 
-
     }) // end dbPromise.then
-
-
 
 })(); // end anonymos function
