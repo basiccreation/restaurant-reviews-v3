@@ -1,5 +1,5 @@
 
-
+//https://developers.google.com/web/ilt/pwa/working-with-indexeddb
 
 
 (function() {
@@ -18,15 +18,19 @@
  var dbPromise = idb.open('test-db2', 1, function(upgradeDb) {
     console.log('making first object store');
     if (!upgradeDb.objectStoreNames.contains('firstOS')) {
-      upgradeDb.createObjectStore('firstOS');
+      var firstOS = upgradeDb.createObjectStore('firstOS', {autoIncrement:true});
+       firstOS.createIndex('id', 'id', {unique: true});
+
     } // end if ... secondOS
         console.log('making second object store');
     if (!upgradeDb.objectStoreNames.contains('secondOS')) {
-      upgradeDb.createObjectStore('secondOS');
+      var secondOS = upgradeDb.createObjectStore('secondOS', {autoIncrement:true});
+       secondOS.createIndex('id', 'id', {unique: true});
+
     } // end if ... secondOS
         console.log('making third object store');
     if (!upgradeDb.objectStoreNames.contains('thirdOS')) {
-      upgradeDb.createObjectStore('thirdOS');
+      var thirdOS = upgradeDb.createObjectStore('thirdOS', {keypath:"date", autoIncrement:false});
     } // end if ... thirdOS
   }); // end dbPromise
 })(); // end anonymos function
