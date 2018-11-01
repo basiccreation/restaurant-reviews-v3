@@ -234,6 +234,32 @@ function toggleFavorite() {
     console.log(currentTime);
     
     if (src === "http://localhost:8000/img/heartsolid.svg") {
+        console.log(src);
+
+
+        dbPromise.then(function(db) {
+  var tx = db.transaction('currentFavoriteObjectStore', 'readwrite');
+  var store = tx.objectStore('currentFavoriteObjectStore');
+  var item = {
+    name: 'sandwich',
+    //created: new Date().getTime()
+  };
+  store.put(item);
+  return tx.complete;
+}).then(function() {
+  console.log('item updated!');
+});
+
+
+
+
+
+
+
+
+
+
+
         image.src = "img/heart.svg";
 
         fetch('http://localhost:1337/restaurants/'+ restaurant_id +'/?is_favorite=true', {

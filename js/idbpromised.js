@@ -11,7 +11,7 @@
     }
 
   if (!('indexedDB' in window)) {
-    console.log('This browser doesn\'t support IndexedDB');
+    console.log('This browser does not support IndexedDB');
     return;
   }
 
@@ -23,17 +23,25 @@
       restaurantObjectStore.createIndex('cuisinetype', 'cuisine_type', {unique: false});
     } // end if ... restaurantObjectStore
     
+    //console.log('making currentFavoriteObjectStore');
+    if (!upgradeDb.objectStoreNames.contains('currentFavoriteObjectStore')) {
+      var currentFavoriteObjectStore = upgradeDb.createObjectStore('currentFavoriteObjectStore', {keypath:"restaurant_id", autoIncrement: true });
+      currentFavoriteObjectStore.createIndex('id', 'id', {unique: true});
+      currentFavoriteObjectStore.createIndex('cuisinetype', 'cuisine_type', {unique: false});
+    } // end if ... currentFavoriteObjectStore
+
    // console.log('making reviewObjectStore');
     if (!upgradeDb.objectStoreNames.contains('reviewObjectStore')) {
       var reviewObjectStore = upgradeDb.createObjectStore('reviewObjectStore', {keypath:"id", autoIncrement: true });
       reviewObjectStore.createIndex('reviewid', 'id', {unique: true});
       reviewObjectStore.createIndex('restaurantid', 'restaurant_id', {unique: false});
     } // end if ... reviewObjectStore
+
     
-   // console.log('making currentFavoriteObjectStore');
-    if (!upgradeDb.objectStoreNames.contains('currentFavoriteObjectStore')) {
-      var currentFavoriteObjectStore = upgradeDb.createObjectStore('currentFavoriteObjectStore', {keyPath: 'restaurant_id'});
-    } // end if ... currentFavoriteObjectStore
+   // // console.log('making currentFavoriteObjectStore');
+   //  if (!upgradeDb.objectStoreNames.contains('currentFavoriteObjectStore')) {
+   //    var currentFavoriteObjectStore = upgradeDb.createObjectStore('currentFavoriteObjectStore', {keyPath: 'restaurant_id'});
+   //  } // end if ... currentFavoriteObjectStore
     
   //  console.log('making savedOfflineReviews');
     if (!upgradeDb.objectStoreNames.contains("savedOfflineReviews")) {
@@ -43,16 +51,45 @@
 
   }); // end dbPromise
 
-dbPromise.then(function(db) {
-  var tx = db.transaction('reviewObjectStore', 'readonly');
-  var store = tx.objectStore('reviewObjectStore');
-  return store.getAll();
-}).then(function(items) {
-  console.log('Items by name:', items);
-});
+// dbPromise.then(function(db) {
+//   var tx = db.transaction('reviewObjectStore', 'readonly');
+//   var store = tx.objectStore('reviewObjectStore');
+//   return store.getAll();
+// }).then(function(items) {
+//   console.log('Items by name:', items);
+// });// end dbPromise
+
+
+
 
 
     dbPromise.then(function(db) {
+
+//......currentFavoriteObjectStore.....
+
+        const RestaurantFavoriteUrl = "http://localhost:1337/restaurants";
+
+        fetch(RestaurantFavoriteUrl)
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(faveJSON) {
+                //console.log(faveJSON)
+
+                var tx = db.transaction(['currentFavoriteObjectStore'], 'readwrite');
+                var store = tx.objectStore('currentFavoriteObjectStore');
+
+                for (var i = 0; i < faveJSON.length; i++) {
+                 store.add(faveJSON[i].is_favorite);
+                }
+                tx.complete;
+
+            })
+            .catch(err => {
+                console.log("currentFavoriteObjectStore JSON err");
+            }); // end catch
+
+//object restaurant store
 
         const RestaurantJSONurl = "http://localhost:1337/restaurants";
 
@@ -75,6 +112,8 @@ dbPromise.then(function(db) {
                 console.log("restaurantObjectStore JSON err");
             }); // end catch
 
+
+//review obejct store
         const ReviewJSONurl = "http://localhost:1337/reviews";
 
         fetch(ReviewJSONurl)
