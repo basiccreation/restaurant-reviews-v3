@@ -59,15 +59,28 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
 
     const heart = document.getElementById("heart");
 
-    let currentfavorites = localStorage.getItem("favorites");
-    currentfavorites = currentfavorites ? JSON.parse(currentfavorites) : {};
-    const resID = "resID" + restaurantIDfromPage;
-
-    if (currentfavorites[resID] === restaurantIDfromPage) {
+    if (restaurant.is_favorite === true) {
         heart.src = "img/heartsolid.svg";
+        heart.classList.add('my-favorite');
     } else {
         heart.src = "img/heart.svg";
+        heart.classList.remove('my-favorite');
     }
+
+    heart.addEventListener("click", (event) => {
+        event.preventDefault();
+        if (heart.classList.contains("my-favorite")) {
+            heart.src = "img/heart.svg";
+            DBHelper.favoriteRestaurantUnchecked(restaurant.id);
+            console.log("THIS RESTAURANT IS NO LONGER A FAVORITE" );
+        } 
+        else {
+            heart.src = "img/heartsolid.svg";
+            DBHelper.favoriteRestaurantChecked(restaurant.id);
+            console.log("THIS RESTAURANT IS NOW A FAVORITE" );
+        }
+        heart.classList.toggle('my-favorite');
+    })
 
     const address = document.getElementById("restaurant-address");
     address.innerHTML = restaurant.address;
@@ -133,68 +146,6 @@ function getID(name, href) {
         return decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
-// const reviewURL = "http://localhost:1337/reviews/?restaurant_id=" + restaurantIDfromPage;
-// let currentRestaurantName = (restaurant = self.restaurant) => {
-//     console.log(restaurant.name);
-// };
-
-// fetch(reviewURL)
-//     .then(function(response) {
-//         return response.json();
-//     })
-//     // .then(function(json) {
-//     //     return json;
-//     // })
-//     .then(function(reviews) {
-//         const container = document.getElementById("reviews-container");
-
-//         if (!reviews) {
-//             const noReviews = document.createElement("p");
-//             noReviews.innerHTML = "No reviews yet!";
-//             container.appendChild(noReviews);
-//             return;
-//         }
-
-//         const ul = document.getElementById("reviews-list");
-//         reviews.forEach(review => {
-//             ul.appendChild(createReviewHTML(review));
-//         });
-//         container.appendChild(ul);
-
-//     });
-
-// /**
-//  * Create review HTML and add it to the webpage.
-//  */
-// createReviewHTML = (review) => {
-//     const li = document.createElement("li");
-//     li.className = "col-l-3 left-m left-s"
-
-//     const div = document.createElement("div");
-//     li.appendChild(div);
-
-//     const name = document.createElement("p");
-//     name.innerHTML = review.name;
-//     name.className = "review-name";
-//     name.tabIndex = 1;
-//     div.appendChild(name);
-
-//     const rating = document.createElement("p");
-//     let r = review.rating;
-//     rating.innerHTML = getRatingOption (r) + review.rating;
-//     rating.className = "review-rating";
-//     rating.tabIndex = 1;
-//     li.appendChild(rating);
-
-//     const comments = document.createElement("p");
-//     comments.innerHTML = review.comments;
-//     comments.className = "review-comments";
-//     comments.tabIndex = 1;
-//     li.appendChild(comments);
-
-//     return li;
-// };
-
 /**
  * Add restaurant name to the breadcrumb navigation menu
  */
@@ -220,97 +171,4 @@ getParameterByName = (name, url) => {
         return "";
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 };
-
-
-/*
- *  * Toggle favorite heart.
- */
-
-function toggleFavorite() {
-    var image = document.getElementById("heart");
-    let restaurant_id = restaurantIDfromPage;
-    var src = image.src;
-    let currentTime = new Date().toISOString;
-    console.log(currentTime);
-    
-    if (src === "http://localhost:8000/img/heartsolid.svg") {
-        console.log(src);
-
-
-        dbPromise.then(function(db) {
-  var tx = db.transaction('currentFavoriteObjectStore', 'readwrite');
-  var store = tx.objectStore('currentFavoriteObjectStore');
-  var item = {
-    name: 'sandwich',
-    //created: new Date().getTime()
-  };
-  store.put(item);
-  return tx.complete;
-}).then(function() {
-  console.log('item updated!');
-});
-
-
-
-
-
-
-
-
-
-
-
-        image.src = "img/heart.svg";
-
-        fetch('http://localhost:1337/restaurants/'+ restaurant_id +'/?is_favorite=true', {
-            method: 'PUT',
-            mode: 'cors',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                is_favorite: false,
-                updatedAt: currentTime
-            })
-        })
-
-    } else if (src == "http://localhost:8000/img/heart.svg") {
-        image.src = "img/heartsolid.svg";
-
-        fetch('http://localhost:1337/restaurants/'+ restaurant_id +'/?is_favorite=false', {
-            method: 'PUT',
-            mode: 'cors',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                is_favorite: true,
-                updatedAt: currentTime
-            })
-        })
-    }
-} //end toggleFavorite
-
-
-// function toggleFavorite() {
-//     var image = document.getElementById("heart");
-//     var src = image.src;
-//     if (src === "http://localhost:8000/img/heartsolid.svg") {
-//         image.src = "img/heart.svg";
-//         let currentfavorites = localStorage.getItem("favorites");
-//         currentfavorites = JSON.parse(currentfavorites);
-//         const resID = "resID" + restaurantIDfromPage;
-//         delete currentfavorites[resID];
-//         localStorage.setItem('favorites', JSON.stringify(currentfavorites));
-
-//     } else if (src == "http://localhost:8000/img/heart.svg") {
-//         image.src = "img/heartsolid.svg";
-//         let currentfavorites = localStorage.getItem("favorites");
-//         currentfavorites = currentfavorites ? JSON.parse(currentfavorites) : {};
-//         currentfavorites["resID" + restaurantIDfromPage] = restaurantIDfromPage;
-//         localStorage.setItem('favorites', JSON.stringify(currentfavorites));
-//     }
-// } //end toggleFavorite
 

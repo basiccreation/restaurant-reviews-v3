@@ -197,17 +197,24 @@ class DBHelper {
     }
 
     /**
-     * Restaurant favorite checked.
+     * Restaurant is favorite.
      */
+    // http://localhost:1337/restaurants/<restaurant_id>/?is_favorite=true
     static favoriteRestaurantChecked(restaurant) {
-        return (`http://localhost:1337/restaurants/<restaurant_id>/?is_favorite=true`);
+        fetch(`http://localhost:1337/restaurants/${restaurant}/?is_favorite=true`, {
+            method: 'PUT'
+        });
     }
 
-   /**
-     * Restaurant favorite not checked.
+    /**
+     * Restaurant is not favorite.
      */
+    // http://localhost:1337/restaurants/<restaurant_id>/?is_favorite=false
+
     static favoriteRestaurantUnchecked(restaurant) {
-        return (`http://localhost:1337/restaurants/<restaurant_id>/?is_favorite=false`);
+        fetch(`http://localhost:1337/restaurants/${restaurant}/?is_favorite=false`, {
+            method: 'PUT'
+        });
     }
 
 
