@@ -22,10 +22,10 @@
             restaurantObjectStore.createIndex('cuisinetype', 'cuisine_type', { unique: false });
         } // end if ... restaurantObjectStore
 
-        //console.log('making currentFavoriteObjectStore');
-        if (!upgradeDb.objectStoreNames.contains('currentFavoriteObjectStore')) {
-            var currentFavoriteObjectStore = upgradeDb.createObjectStore('currentFavoriteObjectStore', { keypath: "restaurant_id", autoIncrement: true });
-        } // end if ... currentFavoriteObjectStore
+        // //console.log('making offLineReviewStore');
+        // if (!upgradeDb.objectStoreNames.contains('offLineReviewStore')) {
+        //     var offLineReviewStore = upgradeDb.createObjectStore('offLineReviewStore', { keypath: "restaurant_id", autoIncrement: true });
+        // } // end if ... offLineReviewStore
 
         // console.log('making reviewObjectStore');
         if (!upgradeDb.objectStoreNames.contains('reviewObjectStore')) {
@@ -44,50 +44,6 @@
 
 
     dbPromise.then(function(db) {
-
-        //......currentFavoriteObjectStore.....
-
-        const RestaurantFavoriteUrl = "http://localhost:1337/restaurants";
-
-        fetch(RestaurantFavoriteUrl)
-            .then(function(response) {
-                return response.json();
-            })
-            .then(function(faveJSON) {
-                //console.log(faveJSON)
-
-                var tx = db.transaction(['currentFavoriteObjectStore'], 'readwrite');
-                var store = tx.objectStore('currentFavoriteObjectStore'); 
-
-                for (var i = 0; i < faveJSON.length; i++) {
-
-                  if(isNaN(faveJSON[i].updatedAt)) {
-                    //if NaN set date to March 7 2010 @ 9 when company started. because there will be no reviews before that day.
-                      faveJSON[i].updatedAt = 1267952400;
-                  } else {
-                      faveJSON[i].updatedAt = faveJSON[i].updatedAt
-                  }
-
-                    if (!faveJSON[i].is_favorite || "false") {
-                        faveJSON[i].is_favorite = false
-                    } else {
-                        faveJSON[i].is_favorite = true
-                    }
-
-                    var item = {
-                      is_favorite: faveJSON[i].is_favorite,
-                      updatedAt: faveJSON[i].updatedAt
-                    };
-
-                    store.add(item);
-                }
-                tx.complete;
-
-            })
-            .catch(err => {
-                console.log("currentFavoriteObjectStore JSON err");
-            }); // end catch
-            
 
         //object restaurant store
 
@@ -139,12 +95,7 @@
 
 
 
-
-
-
-
-
-
-
-
 })(); // end anonymos function
+
+
+

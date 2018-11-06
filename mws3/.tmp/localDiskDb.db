@@ -1027,6 +1027,132 @@
         "createdAt": "2018-10-22T00:46:22.103Z",
         "updatedAt": "2018-10-22T00:46:22.103Z",
         "id": 91
+      },
+      {
+        "restaurant_id": "1",
+        "name": "pia",
+        "rating": "4",
+        "comments": "testing testing testing testing",
+        "createdAt": "2018-11-05T03:13:21.512Z",
+        "updatedAt": "2018-11-05T03:13:21.512Z",
+        "id": 92
+      },
+      {
+        "restaurant_id": "1",
+        "name": "oua",
+        "rating": "5",
+        "comments": "this is so goooood",
+        "createdAt": "2018-11-05T03:16:21.399Z",
+        "updatedAt": "2018-11-05T03:16:21.399Z",
+        "id": 93
+      },
+      {
+        "restaurant_id": "1",
+        "name": "Claio",
+        "rating": "5",
+        "comments": "First time I came here I was blown away, making it one of my favorite spots! Decided to come back with friends: Ordered exact same thing as previous visit: food was not the same plate in taste & presentation. I was left disappointed, we agreed this would be our last visit.",
+        "createdAt": "2018-11-05T15:53:23.802Z",
+        "updatedAt": "2018-11-05T15:53:23.802Z",
+        "id": 94
+      },
+      {
+        "restaurant_id": "1",
+        "name": "Tina",
+        "rating": "5",
+        "comments": "First time I came here I was blown away, making it one of my favorite spots! Decided to come back with friends: Ordered exact same thing as previous visit: food was not the same plate in taste & presentation. I was left disappointed, we agreed this would be our last visit.",
+        "createdAt": "2018-11-05T15:58:29.168Z",
+        "updatedAt": "2018-11-05T15:58:29.168Z",
+        "id": 95
+      },
+      {
+        "restaurant_id": "1",
+        "name": "James",
+        "rating": "4",
+        "comments": "First time I came here I was blown away, making it one of my favorite spots! Decided to come back with friends: Ordered exact same thing as previous visit: food was not the same plate in taste & presentation. I was left disappointed, we agreed this would be our last visit.",
+        "createdAt": "2018-11-05T16:00:11.707Z",
+        "updatedAt": "2018-11-05T16:00:11.707Z",
+        "id": 96
+      },
+      {
+        "restaurant_id": "1",
+        "name": "William",
+        "rating": "2",
+        "comments": "First time I came here I was blown away, making it one of my favorite spots! Decided to come back with friends: Ordered exact same thing as previous visit: food was not the same plate in taste & presentation. I was left disappointed, we agreed this would be our last visit.",
+        "createdAt": "2018-11-05T16:36:32.484Z",
+        "updatedAt": "2018-11-05T16:36:32.484Z",
+        "id": 97
+      },
+      {
+        "restaurant_id": "1",
+        "name": "Cam",
+        "rating": "2",
+        "comments": "Never had this bad of service ANYWHERE!! Will be back for the midnight on lanai and bread- other then that the food is meh- and don't get Joshua as your server- I will make sure I never do again. Always have a great experience here sitting at the bar- guess I won't go unless there is spots at bar. Couldn't believe this happened.",
+        "createdAt": "2018-11-05T22:40:55.125Z",
+        "updatedAt": "2018-11-05T22:40:55.125Z",
+        "id": 98
+      },
+      {
+        "restaurant_id": "1",
+        "name": "Brutus",
+        "rating": "3",
+        "comments": "My Third Visit And Its One Of the Best Restaurants Ive Ever been To in Santa Cruz. First Visit Last Week I Had the Meatloaf It was Very Delicious for Dessert I had Their Blueberry Bread Puding it Was Fantastic.    Then A Few Days Later another Trip I had the Short Ribs Also A Great Dish Very Tender Good Portion.",
+        "createdAt": "2018-11-06T06:15:11.738Z",
+        "updatedAt": "2018-11-06T06:15:11.738Z",
+        "id": 99
+      },
+      {
+        "restaurant_id": "1",
+        "name": "Jenny",
+        "rating": "4",
+        "comments": "My Third Visit And Its One Of the Best Restaurants Ive Ever been To in Santa Cruz. First Visit Last Week I Had the Meatloaf It was Very Delicious for Dessert I had Their Blueberry Bread Puding it Was Fantastic.    Then A Few Days Later another Trip I had the Short Ribs Also A Great Dish Very Tender Good Portion.",
+        "createdAt": "2018-11-06T06:16:14.167Z",
+        "updatedAt": "2018-11-06T06:16:14.167Z",
+        "id": 100
+      },
+      {
+        "restaurant_id": "1",
+        "name": "Tumi",
+        "rating": "1",
+        "comments": "My Third Visit And Its One Of the Best Restaurants Ive Ever been To in Santa Cruz. First Visit Last Week I Had the Meatloaf It was Very Delicious for Dessert I had Their Blueberry Bread Puding it Was Fantastic.    Then A Few Days Later another Trip I had the Short Ribs Also A Great Dish Very Tender Good Portion.",
+        "createdAt": "2018-11-06T06:24:06.543Z",
+        "updatedAt": "2018-11-06T06:24:06.543Z",
+        "id": 101
+      },
+      {
+        "restaurant_id": "1",
+        "name": "Willy",
+        "rating": "1",
+        "comments": "        .then((res) => res.json())\n        .then(data => console.log(data))",
+        "createdAt": "2018-11-06T06:27:38.354Z",
+        "updatedAt": "2018-11-06T06:27:38.354Z",
+        "id": 102
+      },
+      {
+        "restaurant_id": "1",
+        "name": "Irene",
+        "rating": "2",
+        "comments": "Our salads and meals were served at random times, making dining awkward. My overpriced pasta was so overwhelmed with garlic, I couldn't enjoy it. \nI try to like this place, but I just don't.",
+        "createdAt": "2018-11-06T06:39:33.049Z",
+        "updatedAt": "2018-11-06T06:39:33.049Z",
+        "id": 103
+      },
+      {
+        "restaurant_id": "1",
+        "name": "Tilda",
+        "rating": "4",
+        "comments": "My wife noted the ladies room needed attention. There is no excuse for that in this level of restaurant. She told the manager who said he'd let the hostess know. Shouldn't she have been on top of this in the first place?\n",
+        "createdAt": "2018-11-06T06:46:17.013Z",
+        "updatedAt": "2018-11-06T06:46:17.013Z",
+        "id": 104
+      },
+      {
+        "restaurant_id": "1",
+        "name": "Wanda",
+        "rating": "2",
+        "comments": "I liked the cocktails, I had a margarita with jalapeño and a special cocktail with grapefruit juice. I suppose if I didn't have them I'd be in a much worse mood. Cheers!\n",
+        "createdAt": "2018-11-06T16:36:42.764Z",
+        "updatedAt": "2018-11-06T16:36:42.764Z",
+        "id": 105
       }
     ]
   },
@@ -1082,7 +1208,7 @@
       "id": 10
     },
     "reviews": {
-      "id": 91
+      "id": 105
     }
   }
 }
